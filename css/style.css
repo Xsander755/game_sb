@@ -82,7 +82,7 @@
     width: 22.6%;
     height: 40.8%;
     top: 46.6%;
-    left: calc(50% - 11.3%);
+    left: calc(50% - 7.3%);
 }
 
 .cat_tr {
@@ -91,8 +91,8 @@
   background-size: contain;
   width: 22.6%;
   height: 40.8%;
-  top: 58%;
-  left: calc(50% - 11.3%);
+  top: 60%;
+  left: calc(50% - 26.3%);
   z-index: 5;
 }
 
@@ -136,15 +136,15 @@
 
 .btn_blocs {
     position: absolute;
-    width: 680px;
-    height: 83px;
-    left: 62px;
-    top: 94px;
+    width: 100%;
+    height: 16.6%;
+    left:0;
+    top: 10%;
 }
 
 .btn_training {
-    position: relative;
-    left: 0;
+    position: absolute;
+    left: calc(50% - 350px);
     background: url(../img/btn_game.png) no-repeat;
     background-size: contain;
     width: 328px;
@@ -160,7 +160,7 @@
 
 .btn_testing {
     position: relative;
-    left: 35px;
+    left:  calc(50% + 20px);;
     background: url(../img/btn_bots.png) no-repeat;
     background-size: contain;
     width: 328px;
@@ -195,19 +195,19 @@
 .splash {
     position: absolute;
     top: 34px;
-    left: calc(50% - 316px);
-    width: 637px;
-    height: 298px;
+    left: 10%;
+    width: 79.6%;
+    height: 59.6%;
     background: url(../img/splash.png) no-repeat;
     background-size: contain;
 }
 
 .content_sp {
     position: absolute;
-    width: 420px;
-    height: 200px;
-    left: 44px;
-    top: 22px;
+    width: 72%;
+    height: 82%;
+    left: 5%;
+    top: 5%;
 }
 
 span,
@@ -218,10 +218,25 @@ span p {
     line-height: 1.15;
     text-align: left;
 }
+span:-webkit-full-screen,
+span:-webkit-full-screen  p:-webkit-full-screen {
+    font-size: 16px;
+    font-family: "FedraSansPro-Book";
+    color: rgb(35, 35, 35);
+    line-height: 1.15;
+    text-align: left;
+}
 
 .caption {
     margin-top: 10px;
     font-size: 12px;
+    font-family: "FedraSansPro-Book";
+    color: rgb(35, 35, 35);
+    line-height: 1.2;
+}
+.caption:-webkit-full-screen {
+    margin-top: 10px;
+    font-size: 16px;
     font-family: "FedraSansPro-Book";
     color: rgb(35, 35, 35);
     line-height: 1.2;
@@ -249,7 +264,7 @@ span p {
 .coment {
     width: 100%;
     position: absolute;
-    font-size: 14px;
+    ze: 14px;
     font-family: "FedraSansPro-Book";
     color: rgb(35, 35, 35);
     line-height: 1.2;
@@ -281,7 +296,7 @@ span p {
     width: 160px;
     height: 65px;
     left: 16px;
-    top: 420px;
+    bottom: 1%;
 }
 
 .lain {

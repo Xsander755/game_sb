@@ -45,8 +45,10 @@ $(function() {
         } else {
             if ($(this).attr('data') == 1) {
                 $(this).css('background', '#73a95f');
-                $('.cat_tr').addClass('nise');
-                $('.en_tr').addClass('en_nise');
+                if (stWin == true) {
+                  $('.cat_tr').addClass('nise');
+                  $('.en_tr').addClass('en_nise');
+                }
                 if (stWin == false) {
                     $('.cat_tr2').addClass('nise');
                     $('.en_tr').addClass('en_nise');
@@ -63,8 +65,11 @@ $(function() {
                 nuMstaK(1);
             } else {
                 $(this).css('background', '#DA2422');
-                $('.cat_tr').removeClass('nise');
-                $('.en_tr').removeClass('en_nise');
+
+                if (stWin == true) {
+                  $('.cat_tr').removeClass('nise');
+                  $('.en_tr').removeClass('en_nise');
+                }
                 if (stWin == false) {
                     $('.cat_tr2').removeClass('nise');
                     $('.en_tr').removeClass('en_nise');
@@ -116,8 +121,6 @@ $(function() {
     //nuMstaK(nusStak);
 
     //Таймер
-
-
     function startTimer(duration, display) {
         var timer = duration,
             minutes, seconds;
@@ -136,6 +139,9 @@ $(function() {
             }
         }, 1000);
     }
+
+    //fullscreen
+
     var element = document.getElementById("gw");
     $('.fs').click(function() {
 
