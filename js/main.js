@@ -60,7 +60,7 @@ $(function() {
                     $('.coment_block_bot').find('#k' + nv).delay(500).fadeIn().css('background', '#73a95f');
                 }
 
-                nuMstaK(20);
+                nuMstaK(1);
             } else {
                 $(this).css('background', '#DA2422');
                 $('.cat_tr').removeClass('nise');
@@ -106,14 +106,14 @@ $(function() {
     function nuMstaK(ns) {
         nusStak = parseInt(nusStak) + parseInt(ns)
         if (nusStak < 1500) {
-            $('.lains_in').css('width', (155 * nusStak) / 1500 + 'px');
+            $('.lains_in').css('width', (155 * nusStak) / 12 + 'px');
         }
         //  $('.lains_in').css('width', (155 * nusStak) / 1500 + 'px');
         $('.tec_num').html(nusStak);
 
         console.log(nusStak);
     }
-    nuMstaK(nusStak);
+    //nuMstaK(nusStak);
 
     //Таймер
 

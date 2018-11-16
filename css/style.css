@@ -44,9 +44,10 @@
     position: absolute;
     background: url(../img/menu_bottom.png) no-repeat;
     background-size: contain;
-    width: 276px;
-    height: 34px;
-    margin: 0 auto;
+    width: 34.5%;
+    height: 6.8%;
+    left: 50%;
+    margin-left: -12.25%;
     bottom: 0;
     cursor: pointer;
     z-index: 6;
@@ -56,10 +57,10 @@
     position: absolute;
     background: url(../img/shop_icon.png) no-repeat;
     background-size: contain;
-    right: 20px;
-    top: 420px;
-    width: 54px;
-    height: 56px;
+    right: 2.5%;
+  bottom: 2.5%;
+    width: 6.75%;
+    height: 11.2%;
     cursor: pointer;
 }
 
@@ -67,10 +68,10 @@
     position: absolute;
     background: url(../img/help_icon.png) no-repeat;
     background-size: contain;
-    right: 100px;
-    top: 421px;
-    width: 54px;
-    height: 57px;
+    right:12.5%;
+    top: 86.7%;
+    width: 6.75%;
+    height: 11.3%;
     cursor: pointer;
 }
 
@@ -78,42 +79,42 @@
     position: absolute;
     background: url(../img/cat_l.png) no-repeat;
     background-size: contain;
-    width: 181px;
-    height: 213px;
-    top: 223px;
-    left: calc(50% - 90px);
+    width: 22.6%;
+    height: 40.8%;
+    top: 46.6%;
+    left: calc(50% - 11.3%);
 }
 
 .cat_tr {
-    position: absolute;
-    background: url(../img/cat_n.png) no-repeat;
-    background-size: contain;
-    width: 156px;
-    height: 168px;
-    top: 316px;
-    left: calc(50% - 78px);
-    z-index: 5;
+  position: absolute;
+  background: url(../img/cat_n.png) no-repeat;
+  background-size: contain;
+  width: 22.6%;
+  height: 40.8%;
+  top: 58%;
+  left: calc(50% - 11.3%);
+  z-index: 5;
 }
 
 .cat_tr2 {
-    position: absolute;
-    background: url(../img/cat_n.png) no-repeat;
-    background-size: contain;
-    width: 156px;
-    height: 168px;
-    top: 316px;
-    left: calc(40% - 78px);
-    z-index: 5;
+  position: absolute;
+  background: url(../img/cat_n.png) no-repeat;
+  background-size: contain;
+  width: 22.6%;
+  height: 40.8%;
+  top: 58%;
+  left: calc(45% - 11.3%);
+  z-index: 5;
 }
 
 .en_tr {
     position: absolute;
     background: url(../img/en.png) no-repeat;
     background-size: contain;
-    width: 156px;
-    height: 168px;
-    top: 316px;
-    left: calc(60% - 78px);
+    width: 22.6%;
+    height: 40.8%;
+    top: 58%;
+    left: calc(63% - 11.3%);
     z-index: 5;
 }
 
@@ -121,10 +122,10 @@
     position: absolute;
     background: url(../img/en_2.png) no-repeat;
     background-size: contain;
-    width: 156px;
-    height: 168px;
-    top: 316px;
-    left: calc(60% - 78px);
+    width: 22.6%;
+    height: 40.8%;
+    top: 58%;
+    left: calc(63% - 11.3%);
     z-index: 5;
 }
 
@@ -296,7 +297,7 @@ span p {
 
 .lains_in {
     position: absolute;
-    width: 40px;
+    width: 0px;
     height: 15px;
     border-radius: 15px;
     background: #50A959;
