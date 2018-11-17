@@ -208,7 +208,7 @@
   width: 72%;
   height: 82%;
   left: 5%;
-  top: 5%;
+  top: 10%;
 }
 
 span,
@@ -266,10 +266,11 @@ span p {
   position: relative;
   top: 15px;
   border: 1px solid #E6E6E6;
-  height: 39px;
+  height: 15%;
   cursor: pointer;
   overflow: hidden;
   left: -16px;
+  vertical-align: middle;
 }
 
 .option span {
@@ -284,7 +285,7 @@ span p {
 .coment {
   width: 100%;
   position: absolute;
-  ze: 14px;
+  font-size: : 14px;
   font-family: "FedraSansPro-Book";
   color: rgb(35, 35, 35);
   line-height: 1.2;
@@ -428,12 +429,23 @@ span p {
   cursor: pointer;
 }
 
-@media screen and (min-width:1440px) {
-  .content_sp {
-    width: 62%;
-  }
-}
 
+:-webkit-full-screen .content_sp {
+    width: 65%;
+  }
+:-webkit-full-screen p, :-webkit-full-screen .caption{
+    font-size: 21px;
+  }
+  :-webkit-full-screen span{
+    font-size: 18px;
+  }
+  :-webkit-full-screen .option {
+    height: 16%;
+  }
+  :-webkit-full-screen .coment{
+      font-size: 24px;
+        padding: 15px;
+    }
 #testing {
   display: none;
   opacity: 0;
