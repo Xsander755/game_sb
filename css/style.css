@@ -1,445 +1,462 @@
 * {
-  padding: 0;
-  margin: 0;
+    padding: 0;
+    margin: 0;
 }
 
 .game_wrapp {
-  position: relative;
-  width: 800px;
-  height: 500px;
-  border: 1px solid #73a95f;
-  box-sizing: border-box;
-  display: none;
-  overflow: hidden;
+    position: relative;
+    width: 800px;
+    height: 500px;
+    border: 1px solid #73a95f;
+    box-sizing: border-box;
+    display: none;
+    overflow: hidden;
 }
 
 .pages {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
 }
 
 .fon {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: url(../img/fon.png) no-repeat;
-  background-size: 100.4%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../img/fon.png) no-repeat;
+    background-size: 100.4%;
 }
 
 .fon2 {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: url(../img/fon2.jpg) no-repeat;
-  background-size: 100.4%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../img/fon2.jpg) no-repeat;
+    background-size: 100.4%;
 }
 
 .menu_bootom {
-  position: absolute;
-  background: url(../img/menu_bottom.png) no-repeat;
-  background-size: contain;
-  width: 34.5%;
-  height: 6.8%;
-  left: 50%;
-  margin-left: -12.25%;
-  bottom: 0;
-  cursor: pointer;
-  z-index: 6;
+    position: absolute;
+    background: url(../img/menu_bottom.png) no-repeat;
+    background-size: contain;
+    width: 34.5%;
+    height: 6.8%;
+    left: 50%;
+    margin-left: -12.25%;
+    bottom: 0;
+    cursor: pointer;
+    z-index: 6;
 }
 
 .shops {
-  position: absolute;
-  background: url(../img/shop_icon.png) no-repeat;
-  background-size: contain;
-  right: 2.5%;
-  bottom: 2.5%;
-  width: 6.75%;
-  height: 11.2%;
-  cursor: pointer;
+    position: absolute;
+    background: url(../img/shop_icon.png) no-repeat;
+    background-size: contain;
+    right: 2.5%;
+    bottom: 2.5%;
+    width: 6.75%;
+    height: 11.2%;
+    cursor: pointer;
 }
 
 .help {
-  position: absolute;
-  background: url(../img/help_icon.png) no-repeat;
-  background-size: contain;
-  right: 12.5%;
-  top: 86.7%;
-  width: 6.75%;
-  height: 11.3%;
-  cursor: pointer;
+    position: absolute;
+    background: url(../img/help_icon.png) no-repeat;
+    background-size: contain;
+    right: 12.5%;
+    top: 86.7%;
+    width: 6.75%;
+    height: 11.3%;
+    cursor: pointer;
 }
 
 .cat_ini {
-  position: absolute;
-  background: url(../img/cat_l.png) no-repeat;
-  background-size: contain;
-  width: 22.6%;
-  height: 40.8%;
-  top: 46.6%;
-  left: calc(50% - 7.3%);
+    position: absolute;
+    background: url(../img/cat_l.png) no-repeat;
+    background-size: contain;
+    width: 22.6%;
+    height: 40.8%;
+    top: 46.6%;
+    left: calc(50% - 7.3%);
 }
 
 .cat_tr {
-  position: absolute;
-  background: url(../img/cat_n.png) no-repeat;
-  background-size: contain;
-  width: 22.6%;
-  height: 40.8%;
-  top: 60%;
-  left: calc(50% - 26.3%);
-  z-index: 5;
+    position: absolute;
+    background: url(../img/cat_n.png) no-repeat;
+    background-size: contain;
+    width: 22.6%;
+    height: 40.8%;
+    top: 60%;
+    left: calc(50% - 26.3%);
+    z-index: 5;
 }
 
 .cat_tr2 {
-  position: absolute;
-  background: url(../img/cat_n.png) no-repeat;
-  background-size: contain;
-  width: 22.6%;
-  height: 40.8%;
-  top: 58%;
-  left: calc(45% - 11.3%);
-  z-index: 5;
+    position: absolute;
+    background: url(../img/cat_n.png) no-repeat;
+    background-size: contain;
+    width: 22.6%;
+    height: 40.8%;
+    top: 58%;
+    left: calc(45% - 11.3%);
+    z-index: 5;
 }
 
 .en_tr {
-  position: absolute;
-  background: url(../img/en.png) no-repeat;
-  background-size: contain;
-  width: 22.6%;
-  height: 40.8%;
-  top: 58%;
-  left: calc(63% - 11.3%);
-  z-index: 5;
+    position: absolute;
+    background: url(../img/en.png) no-repeat;
+    background-size: contain;
+    width: 22.6%;
+    height: 40.8%;
+    top: 58%;
+    left: calc(63% - 11.3%);
+    z-index: 5;
 }
 
 .en_nise {
-  position: absolute;
-  background: url(../img/en_2.png) no-repeat;
-  background-size: contain;
-  width: 22.6%;
-  height: 40.8%;
-  top: 58%;
-  left: calc(63% - 11.3%);
-  z-index: 5;
+    position: absolute;
+    background: url(../img/en_2.png) no-repeat;
+    background-size: contain;
+    width: 22.6%;
+    height: 40.8%;
+    top: 58%;
+    left: calc(63% - 11.3%);
+    z-index: 5;
 }
 
 .nise {
-  background: url(../img/cat_l.png) no-repeat;
-  background-size: contain;
+    background: url(../img/cat_l.png) no-repeat;
+    background-size: contain;
 }
 
 .btn_blocs {
-  position: absolute;
-  width: 100%;
-  height: 16.6%;
-  left: 0;
-  top: 10%;
+    position: absolute;
+    width: 100%;
+    height: 16.6%;
+    left: 0;
+    top: 10%;
 }
 
 .btn_training {
-  position: absolute;
-  left: calc(50% - 350px);
-  background: url(../img/btn_game.png) no-repeat;
-  background-size: contain;
-  width: 328px;
-  height: 83px;
-  float: left;
-  transition: 0.3s;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -ms-transition: 0.3s;
-  -o-transition: 0.3s;
-  cursor: pointer;
+    position: absolute;
+    left: calc(50% - 350px);
+    background: url(../img/btn_game.png) no-repeat;
+    background-size: contain;
+    width: 328px;
+    height: 83px;
+    float: left;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+    cursor: pointer;
 }
 
 .btn_testing {
-  position: relative;
-  left: calc(50% + 20px);
-  ;
-  background: url(../img/btn_bots.png) no-repeat;
-  background-size: contain;
-  width: 328px;
-  height: 83px;
-  float: left;
-  transition: 0.3s;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -ms-transition: 0.3s;
-  -o-transition: 0.3s;
-  cursor: pointer;
+    position: relative;
+    left: calc(50% + 20px);
+    ;
+    background: url(../img/btn_bots.png) no-repeat;
+    background-size: contain;
+    width: 328px;
+    height: 83px;
+    float: left;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+    cursor: pointer;
 }
 
 .btn_training:hover {
-  opacity: 0.85;
-  transition: 0.3s;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -ms-transition: 0.3s;
-  -o-transition: 0.3s;
+    opacity: 0.85;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
 }
 
 .btn_testing:hover {
-  opacity: 0.85;
-  transition: 0.3s;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -ms-transition: 0.3s;
-  -o-transition: 0.3s;
+    opacity: 0.85;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
 }
 
 .splash {
-  position: absolute;
-  top: 34px;
-  left: 10%;
-  width: 79.6%;
-  height: 59.6%;
-  background: url(../img/splash.png) no-repeat;
-  background-size: contain;
+    position: absolute;
+    top: 34px;
+    left: 10%;
+    width: 79.6%;
+    height: 59.6%;
+    background: url(../img/splash.png) no-repeat;
+    background-size: contain;
 }
 
 .content_sp {
-  position: absolute;
-  width: 72%;
-  height: 82%;
-  left: 5%;
-  top: 5%;
+    position: absolute;
+    width: 72%;
+    height: 82%;
+    left: 5%;
+    top: 10%;
 }
 
 span,
 span p {
-  font-size: 12px;
-  font-family: "FedraSansPro-Book";
-  color: rgb(35, 35, 35);
-  line-height: 1.15;
-  text-align: left;
+    font-size: 12px;
+    font-family: "FedraSansPro-Book";
+    color: rgb(35, 35, 35);
+    line-height: 1.15;
+    text-align: left;
 }
 
 :full-screen {
-  font-size: 16px;
-  font-family: "FedraSansPro-Book";
-  color: rgb(35, 35, 35);
-  line-height: 1.15;
-  text-align: left;
+    font-size: 16px;
+    font-family: "FedraSansPro-Book";
+    color: rgb(35, 35, 35);
+    line-height: 1.15;
+    text-align: left;
 }
 
 .caption {
-  margin-top: 10px;
-  font-size: 12px;
-  font-family: "FedraSansPro-Book";
-  color: rgb(35, 35, 35);
-  line-height: 1.2;
+    margin-top: 10px;
+    font-size: 12px;
+    font-family: "FedraSansPro-Book";
+    color: rgb(35, 35, 35);
+    line-height: 1.2;
 }
 
 :-webkit-full-screen {
-  /*WebKit, Opera 15+*/
-  font-size: 16px;
+    /*WebKit, Opera 15+*/
+    font-size: 16px;
 }
 
 :-moz-full-screen {
-  /*FireFox*/
-  font-size: 16px;
+    /*FireFox*/
+    font-size: 16px;
 }
 
 :full-screen {
-  /*Opera 12.15-, Blink, w3c standard*/
-  font-size: 16px;
+    /*Opera 12.15-, Blink, w3c standard*/
+    font-size: 16px;
 }
 
+
 /*изменения одного элемента img*/
+
 :-webkit-full-screen img {
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 :-moz-full-screen img {
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 .option {
-  position: relative;
-  top: 15px;
-  border: 1px solid #E6E6E6;
-  height: 39px;
-  cursor: pointer;
-  overflow: hidden;
-  left: -16px;
+    position: relative;
+    top: 15px;
+    border: 1px solid #E6E6E6;
+    height: 15%;
+    cursor: pointer;
+    overflow: hidden;
+    left: -16px;
+    vertical-align: middle;
 }
 
 .option span {
-  position: absolute;
-  left: 13px;
-  top: 7px;
-  vertical-align: middle;
-  display: block;
-  width: 90%;
+    position: absolute;
+    left: 13px;
+    top: 7px;
+    vertical-align: middle;
+    display: block;
+    width: 90%;
 }
 
 .coment {
-  width: 100%;
-  position: absolute;
-  ze: 14px;
-  font-family: "FedraSansPro-Book";
-  color: rgb(35, 35, 35);
-  line-height: 1.2;
-  padding: 15px;
-  box-sizing: border-box;
-  display: none;
-  border-radius: 10px;
-  color: #fff;
+    width: 100%;
+    position: absolute;
+    font-size: 14px;
+    font-family: "FedraSansPro-Book";
+    line-height: 1.2;
+    padding: 15px;
+    box-sizing: border-box;
+    display: none;
+    border-radius: 10px;
+    color: #fff;
 }
 
 .coment_block {
-  position: absolute;
-  width: 100%;
-  height: 100px;
-  top: -30px;
+    position: absolute;
+    width: 100%;
+    top: -20px;
 }
 
 .coment_block_bot {
-  position: absolute;
-  width: 100%;
-  height: 91px;
-  top: 5px;
+    position: absolute;
+    width: 100%;
+    height: 91px;
+    top: 5px;
 }
 
 .num_block {
-  position: absolute;
-  font-size: 12px;
-  font-family: "FedraSansPro-Book";
-  width: 160px;
-  height: 65px;
-  left: 16px;
-  bottom: 1%;
+    position: absolute;
+    font-size: 12px;
+    font-family: "FedraSansPro-Book";
+    width: 160px;
+    height: 65px;
+    left: 16px;
+    bottom: 1%;
 }
 
 .lain {
-  position: absolute;
-  width: 155px;
-  height: 15px;
-  border: 2px solid #50A959;
-  top: 30px;
-  border-radius: 15px;
-  background: #fff;
-  box-sizing: border-box;
+    position: absolute;
+    width: 155px;
+    height: 15px;
+    border: 2px solid #50A959;
+    top: 30px;
+    border-radius: 15px;
+    background: #fff;
+    box-sizing: border-box;
 }
 
 .lains_in {
-  position: absolute;
-  width: 0px;
-  height: 15px;
-  border-radius: 15px;
-  background: #50A959;
-  box-sizing: border-box;
-  top: -2px;
-  left: -1px;
-  max-width: 155px;
+    position: absolute;
+    width: 0px;
+    height: 15px;
+    border-radius: 15px;
+    background: #50A959;
+    box-sizing: border-box;
+    top: -2px;
+    left: -1px;
+    max-width: 155px;
 }
 
 .tx_nov {
-  position: absolute;
-  color: #50A959;
-  top: 46px;
-  font-weight: 600;
+    position: absolute;
+    color: #50A959;
+    top: 46px;
+    font-weight: 600;
 }
 
 .tx_expert {
-  position: absolute;
-  color: #50A959;
-  top: 46px;
-  right: 4px;
-  font-weight: 600;
+    position: absolute;
+    color: #50A959;
+    top: 46px;
+    right: 4px;
+    font-weight: 600;
 }
 
 .fin_nums {
-  position: absolute;
-  color: #50A959;
-  top: 15px;
-  right: 4px;
-  font-weight: 600;
-  font-family: 'Roboto', sans-serif;
+    position: absolute;
+    color: #50A959;
+    top: 15px;
+    right: 4px;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
 }
 
 .tec_num {
-  position: absolute;
-  color: #50A959;
-  top: -2px;
-  left: 0;
-  font-size: 29px;
-  font-weight: bold;
-  font-family: 'Roboto', sans-serif;
+    position: absolute;
+    color: #50A959;
+    top: -2px;
+    left: 0;
+    font-size: 29px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
 }
 
 .timer_bloc {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 40px;
-  background: #dd9b29;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 40px;
+    background: #dd9b29;
 }
 
 .timer_lain {
-  position: absolute;
-  width: 120px;
-  height: 39px;
-  left: calc(50% - 60px);
-  top: 0;
+    position: absolute;
+    width: 120px;
+    height: 39px;
+    left: calc(50% - 60px);
+    top: 0;
 }
 
 .timer_icon {
-  position: absolute;
-  width: 19px;
-  height: 24px;
-  top: 8px;
-  left: 10px;
-  background: url(../img/clocs.svg) no-repeat;
+    position: absolute;
+    width: 19px;
+    height: 24px;
+    top: 8px;
+    left: 10px;
+    background: url(../img/clocs.svg) no-repeat;
 }
 
 .timer {
-  position: absolute;
-  font-size: 25px;
-  font-weight: bold;
-  font-family: 'Roboto', sans-serif;
-  color: #fff;
-  left: 40px;
-  top: 7px;
+    position: absolute;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    left: 40px;
+    top: 7px;
 }
 
 .vop2,
 .vop3 {
-  display: none;
+    display: none;
 }
 
 .fs {
-  position: absolute;
-  top: 510px;
-  left: 775px;
-  width: 25px;
-  height: 25px;
-  background: url(../img/fs.svg) no-repeat;
-  background-size: 100%;
-  z-index: 999;
-  cursor: pointer;
+    position: absolute;
+    top: 510px;
+    left: 775px;
+    width: 25px;
+    height: 25px;
+    background: url(../img/fs.svg) no-repeat;
+    background-size: 100%;
+    z-index: 999;
+    cursor: pointer;
 }
 
-@media screen and (min-width:1440px) {
-  .content_sp {
-    width: 62%;
-  }
+:-webkit-full-screen .content_sp {
+    width: 65%;
+}
+
+:-webkit-full-screen p,
+ :-webkit-full-screen .caption {
+    font-size: 21px;
+}
+
+ :-webkit-full-screen span {
+    font-size: 18px;
+}
+
+ :-webkit-full-screen .option {
+    height: 16%;
+}
+
+ :-webkit-full-screen .coment {
+    font-size: 24px;
+    padding: 15px;
 }
 
 #testing {
-  display: none;
-  opacity: 0;
+    display: none;
+    opacity: 0;
 }
 
 #training {
-  display: none;
-  opacity: 0;
+    display: none;
+    opacity: 0;
 }
