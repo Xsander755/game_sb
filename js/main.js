@@ -116,10 +116,10 @@ function stContent() {
     $('.option').next().css("border-top", "0px ");
 
     function initBtn() {
-
+        var count = 0;
+        var score = 0;
         $('.option').click(function() {
 
-            fInals();
             if (disabledClick === true) {
                 return false;
             } else {
@@ -142,7 +142,16 @@ function stContent() {
                         $('.coment_block_bot').find('#k' + nv).delay(500).fadeIn().css('background', '#73a95f');
                     }
 
-                    nuMstaK(10);
+                    if (count < 2) {
+                        nuMstaK(10);
+                    } else
+                    if (count > 2 || count < 4) {
+                        nuMstaK(20);
+                    } else
+                    if (count > 4 || count < 6) {
+                        nuMstaK(30);
+                    }
+                    score++;
                 } else {
                     $(this).css('background', '#DA2422');
 
@@ -165,24 +174,42 @@ function stContent() {
                 }
                 disabledClick = true;
                 setTimeout(function() {
-                    $('.option').css('background', '#fff');
-                    $('.option').find("span").css('color', '#000').css({
-                        "font-weight": "normal"
-                    });
-                    $(this).find('.coment').hide();
-                    $('.coment_block').find('.coment').hide();
-                    if (stWin == false) {
-                        $('.coment_block_bot').find('.coment').hide();
-                    }
-                    disabledClick = false;
-                    $('.vop' + vop).hide();
-                    if (vop < 3) {
-                        vop++;
+                    if (count < 5) {
+                        count++;
+                        console.log('game');
+                        $('.option').css('background', '#fff');
+                        $('.option').find("span").css('color', '#000').css({
+                            "font-weight": "normal"
+                        });
+                        $(this).find('.coment').hide();
+                        $('.coment_block').find('.coment').hide();
+                        if (stWin == false) {
+                            $('.coment_block_bot').find('.coment').hide();
+                        }
+                        disabledClick = false;
+                        $('.vop' + vop).hide();
+                        if (vop < 3) {
+                            vop++;
+                        } else {
+                            vop = 1;
+                        }
+
+                        $('.vop' + vop).delay(200).fadeIn(600);
                     } else {
-                        vop = 1;
+                        $('.verno').html('Верных ответов : ' + score);
+                        $('.ne_verno').html('Не верных ответов : ' + (6 - score));
+                        $('.bals').html('Набранно балов : ' + nusStak);
+
+                        TweenMax.to('.content_sp', 0.7, { autoAlpha: 0, delay: 0.5 });
+                        TweenMax.to('.coment_block', 0.8, { autoAlpha: 0 });
+                        TweenMax.to('.score ', 1, { autoAlpha: 1, delay: 1.2 });
+                        TweenMax.staggerFrom(['.verno', '.ne_verno', '.bals'], 1, {
+                            autoAlpha: 0,
+                            x: '+=45',
+                            delay: 1.5
+                        }, 0.25);
+                        console.log(nusStak);
                     }
-                    console.log(vop);
-                    $('.vop' + vop).delay(200).fadeIn(600);
                 }, time_nex);
             }
         });
@@ -190,29 +217,25 @@ function stContent() {
         var time_nex = 5000;
         var vop = 1;
         var stWin = false;
-        var count = 0;
-        var score = 0;
+
+
         var nusStak = $('.tec_num').attr('data');
         var lever = 1;
 
-        function fInals() {
-            count++;
-            console.log(count);
-            if (count < 6) {
-                console.log('game');
-            } else {
-                console.log('fin_game');
-            }
-        }
-
         function nuMstaK(ns) {
             nusStak = parseInt(nusStak) + parseInt(ns)
+
             if (nusStak < 120) {
-                $('.lains_in').css('width', (155 * nusStak) / 120 + 'px');
+                // $('.lains_in').css('width', (155 * nusStak) / 120 + 'px');
+                TweenMax.to('.lains_in', 0.5, {
+                    width: (155 * nusStak) / 120 + 'px'
+                });
             }
             $('.tec_num').html(nusStak);
 
             console.log(nusStak);
         }
     }
+
+
 }
