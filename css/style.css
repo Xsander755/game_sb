@@ -89,9 +89,9 @@
     position: absolute;
     background: url(../img/cat_n.png) no-repeat;
     background-size: contain;
-    width: 22.6%;
-    height: 40.8%;
-    top: 60%;
+    width: 19.6%;
+    height: 36.8%;
+    top: 63%;
     left: calc(50% - 26.3%);
     z-index: 5;
 }
@@ -208,7 +208,7 @@
     width: 72%;
     height: 82%;
     left: 5%;
-    top: 10%;
+    top: 5%;
 }
 
 span,
@@ -301,6 +301,7 @@ span p {
     position: absolute;
     width: 100%;
     top: -20px;
+    z-index: 99;
 }
 
 .coment_block_bot {
@@ -413,7 +414,10 @@ span p {
 }
 
 .vop2,
-.vop3 {
+.vop3,
+.vop4,
+.vop5,
+.vop6 {
     display: none;
 }
 

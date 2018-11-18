@@ -26,13 +26,55 @@
                     for (var i = 0; i < qu_lenght; i++) {
                         var zadacha = data.main_game.quest[i];
                         console.log(zadacha.quest_text);
-                        $('.splash').append('<section class="content_sp vop' + (i + 1) + '"><div class="subject"><span><p>' + zadacha.quest_text + '</p></span></div> <div class="caption"><h3>Ваши действия:</h3></div></section>');
+                        $('.splash').append('<section class="content_sp vop' + (i + 1) + '">' +
+
+                            //Описание задачи
+                            '<div class="subject">' +
+
+                            '<span>' +
+                            zadacha.quest_text +
+                            '</span></div>' +
+
+                            // Действие
+                            ' <div class="caption">' +
+                            '<h3>' + zadacha.quest_active +
+                            '</h3></div>' +
+
+                            //Вопросы
+
+                            //во1
+
+                            '<div class="option" id="v1" data="' + zadacha.quest_vo[0].ext.data +
+                            '" data-nv="' + zadacha.quest_vo[0].ext.data_nv + '"><span>' +
+                            zadacha.quest_vo[0].ext.tx + '</span></div>' +
+
+                            //во2
+
+                            '<div class="option" id="v2" data="' + zadacha.quest_vo[1].ext.data +
+                            '" data-nv="' + zadacha.quest_vo[1].ext.data_nv + '"><span>' +
+                            zadacha.quest_vo[1].ext.tx + '</span></div>' +
+
+                            //во3
+
+                            '<div class="option" id="v3" data="' + zadacha.quest_vo[2].ext.data +
+                            '" data-nv="' + zadacha.quest_vo[2].ext.data_nv + '"><span>' +
+                            zadacha.quest_vo[2].ext.tx + '</span></div>' +
+
+                            //во4
+
+                            '<div class="option" id="v1" data="' + zadacha.quest_vo[3].ext.data +
+                            '" data-nv="' + zadacha.quest_vo[3].ext.data_nv + '"><span>' +
+                            zadacha.quest_vo[3].ext.tx + '</span></div>' +
+
+
+
+
+
+                            '</section>');
 
                     }
 
-                    function adContent() {
 
-                    }
 
 
 
