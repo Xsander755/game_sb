@@ -69,7 +69,7 @@
     background: url(../img/help_icon.png) no-repeat;
     background-size: contain;
     right: 12.5%;
-    top: 86.7%;
+    top: 86.4%;
     width: 6.75%;
     height: 11.3%;
     cursor: pointer;
@@ -266,9 +266,10 @@ span p {
 
 .option {
     position: relative;
-    top: 15px;
+    top: 5px;
     border: 1px solid #E6E6E6;
-    height: 15%;
+    height: 40px;
+    line-height: 40px;
     cursor: pointer;
     overflow: hidden;
     left: -16px;
@@ -276,12 +277,11 @@ span p {
 }
 
 .option span {
-    position: absolute;
-    left: 13px;
-    top: 7px;
-    vertical-align: middle;
-    display: block;
+    position: relative;
     width: 90%;
+    margin-left: 3.5%;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .coment {
@@ -433,28 +433,6 @@ span p {
     cursor: pointer;
 }
 
-:-webkit-full-screen .content_sp {
-    width: 65%;
-}
-
-:-webkit-full-screen p,
- :-webkit-full-screen .caption {
-    font-size: 21px;
-}
-
- :-webkit-full-screen span {
-    font-size: 18px;
-}
-
- :-webkit-full-screen .option {
-    height: 16%;
-}
-
- :-webkit-full-screen .coment {
-    font-size: 24px;
-    padding: 15px;
-}
-
 #testing {
     display: none;
     opacity: 0;
@@ -522,4 +500,50 @@ span p {
 
  :-webkit-full-screen .bals {
     font-size: 105px;
+}
+
+:-webkit-full-screen .content_sp {
+    width: 65%;
+    top: 10%;
+}
+
+:-webkit-full-screen p,
+:-webkit-full-screen .caption {
+    font-size: 22px;
+}
+
+:-webkit-full-screen span {
+    margin-top: 25px;
+    font-size: 25px;
+}
+
+:-webkit-full-screen .caption {
+    font-size: 26px;
+    margin-top: 40px;
+    ;
+}
+
+:-webkit-full-screen .option {
+    top: 40px;
+    position: relative;
+    height: 6em;
+}
+
+:-webkit-full-screen .coment {
+    font-size: 24px;
+    padding: 15px;
+}
+
+:-webkit-full-screen .option span {
+    position: absolute;
+    display: block;
+    width: 90%;
+    margin-left: 3.5%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+:-webkit-full-screen .coment {
+    font-size: 30px;
+    width: 90%;
 }

@@ -19,6 +19,7 @@ $(function() {
         vop = 1;
         stWin = true;
         stContent();
+
     });
 
     $('.btn_testing').click(function() {
@@ -64,6 +65,7 @@ $(function() {
         }
         console.log(window.offsetWidth);
     });
+
 });
 
 
@@ -89,19 +91,19 @@ function stContent() {
                     //Вопросы
                     //во1
                     '<div class="option" id="v1" data="' + zadacha.quest_vo[0].ext.data +
-                    '" data-nv="' + zadacha.quest_vo[0].ext.data_nv + '"><span>' +
+                    '" data-nv="' + zadacha.quest_vo[0].ext.data_nv + '"><span class="sp">' +
                     zadacha.quest_vo[0].ext.tx + '</span></div>' +
                     //во2
                     '<div class="option" id="v2" data="' + zadacha.quest_vo[1].ext.data +
-                    '" data-nv="' + zadacha.quest_vo[1].ext.data_nv + '"><span>' +
+                    '" data-nv="' + zadacha.quest_vo[1].ext.data_nv + '"><span class="sp">' +
                     zadacha.quest_vo[1].ext.tx + '</span></div>' +
                     //во3
                     '<div class="option" id="v3" data="' + zadacha.quest_vo[2].ext.data +
-                    '" data-nv="' + zadacha.quest_vo[2].ext.data_nv + '"><span>' +
+                    '" data-nv="' + zadacha.quest_vo[2].ext.data_nv + '"><span class="sp">' +
                     zadacha.quest_vo[2].ext.tx + '</span></div>' +
                     //во4
                     '<div class="option" id="v4" data="' + zadacha.quest_vo[3].ext.data +
-                    '" data-nv="' + zadacha.quest_vo[3].ext.data_nv + '"><span>' +
+                    '" data-nv="' + zadacha.quest_vo[3].ext.data_nv + '"><span class="sp">' +
                     zadacha.quest_vo[3].ext.tx + '</span></div>' +
                     '</section>');
 
@@ -112,12 +114,16 @@ function stContent() {
             }
         });
         initBtn();
+        //rOvno();
     });
     $('.option').next().css("border-top", "0px ");
+
 
     function initBtn() {
         var count = 0;
         var score = 0;
+
+
         $('.option').click(function() {
 
             if (disabledClick === true) {
@@ -212,6 +218,7 @@ function stContent() {
                     }
                 }, time_nex);
             }
+
         });
         var disabledClick = false;
         var time_nex = 5000;
@@ -237,5 +244,15 @@ function stContent() {
         }
     }
 
+    // function rOvno() {
+    //     jQuery.fn.verticalAlign = function() {
+    //         console.log($(this));
+    //         console.log($(this).parent());
+    //         console.log($(this).parent().height());
+    //         console.log($(this).height() / 2);
+    //         return this.css("margin-top", ($(this).parent().height() - $(this).height()) / 2 + 'px');
+    //     }
+    //     $('.option span').verticalAlign();
+    // }
 
 }
