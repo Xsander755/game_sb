@@ -220,7 +220,7 @@ function stContent() {
 
                         $('.vop' + vop).delay(200).fadeIn(600);
                     } else {
-                        //TweenMax.to('.babl', 1, { autoAlpha: 0 });
+
                         $('.verno').html('Верных ответов : ' + score);
                         $('.ne_verno').html('Не верных ответов : ' + (6 - score));
                         $('.bals').html('Набранно балов : ' + nusStak);
@@ -228,7 +228,8 @@ function stContent() {
                             $('.za_score').html('Поздравляем!!!');
                             $('.babl').html("<p>Ура! Я выиграл! </p>");
                             TweenMax.to('.babl', 1, { autoAlpha: 1 });
-
+                            var num_ball = nusStak;
+                            setGameResult(num_ball);
                         } else {
                             $('.za_score').html('Нужно потренироваться.');
                         }
