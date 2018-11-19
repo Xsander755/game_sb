@@ -186,9 +186,10 @@ function stContent() {
                         "font-weight": "bold"
                     });
                     var nv = $(this).attr('data-nv');
-                    $('.coment_block').find('#k' + nv).css('background', '#DA2422');
+
+                    $('.coment_block').find('#k' + nv).delay(500).fadeIn().css('background', '#DA2422');
                     if (stWin == false) {
-                        $('.coment_block_bot').find('#k' + nv).css('background', '#DA2422');
+                        $('.coment_block_bot').find('#k' + nv).delay(500).fadeIn().css('background', '#DA2422');
                         $('.babl').html("<p> Ну вот... неправильно </p>");
                         TweenMax.to('.babl', 1, { autoAlpha: 1 });
                     }
@@ -207,7 +208,7 @@ function stContent() {
                         });
 
                         if (stWin == false) {
-                            TweenMax.to('.coment_block', 0.8, { autoAlpha: 0 });
+                            $('.coment_block').find('#k' + nv).fadeOut().css('background', '#DA2422');
                         }
                         disabledClick = false;
                         $('.vop' + vop).hide();
@@ -245,6 +246,8 @@ function stContent() {
                         setTimeout(function() {
                             TweenMax.to('.babl', 1, { autoAlpha: 0 });
                             $('#training').delay(200).fadeOut(600, "linear");
+                            $(".content_sp").remove();
+                            $(".coment").remove();
                             $('#training').css({
                                 'opacity': ' 1'
                             });
