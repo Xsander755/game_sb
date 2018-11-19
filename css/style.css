@@ -97,17 +97,6 @@
     background-repeat: no-repeat;
 }
 
-.cat_tr2 {
-    position: absolute;
-    background: url(../img/cat_n.png) no-repeat;
-    background-size: contain;
-    width: 22.6%;
-    height: 40.8%;
-    top: 58%;
-    left: calc(45% - 11.3%);
-    z-index: 5;
-}
-
 .en_tr {
     position: absolute;
     background: url(../img/en.png) no-repeat;

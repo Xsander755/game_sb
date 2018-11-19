@@ -61,8 +61,6 @@ $(function() {
 
     var element = document.getElementById("gw");
     $('.fs').click(function() {
-
-
         if (element.requestFullScreen) {
             element.requestFullScreen();
         } else if (element.mozRequestFullScreen) {
@@ -70,7 +68,6 @@ $(function() {
         } else if (element.webkitRequestFullScreen) {
             element.webkitRequestFullScreen();
         }
-        console.log(window.offsetWidth);
     });
 
 });
@@ -138,16 +135,9 @@ function stContent() {
             if (disabledClick === true) {
                 return false;
             } else {
+
                 if ($(this).attr('data') == 1) {
                     $(this).css('background', '#73a95f');
-                    if (stWin == true) {
-                        $('.cat_tr').addClass('nise');
-                        $('.en_tr').addClass('en_nise');
-                    }
-                    if (stWin == false) {
-                        $('.cat_tr2').addClass('nise');
-                        $('.en_tr').addClass('en_nise');
-                    }
                     $(this).find("span").css('color', '#FFF').css({
                         "font-weight": "bold"
                     });
@@ -166,47 +156,39 @@ function stContent() {
                         pos = 1;
                     }
                     console.log(count);
-                    if (count < 1) {
+                    if (count == 0 || count == 1) {
                         nuMstaK(10);
                     } else
-                    if (count > 1 || count < 3) {
+                    if (count == 2 || count == 3) {
                         nuMstaK(20);
                         $('.tops').html("<p>Вопросы 2 категории. 20 баллов</p>");
-                    } else {
+                    } else if (count == 4 || count == 5) {
                         nuMstaK(30);
-                        $('.tops').html("<p>Вопросы 3 категории. 40 баллов</p>");
+                        $('.tops').html("<p>Вопросы 3 категории. 30 баллов</p>");
                     }
+
                     score++;
                 } else {
                     $(this).css('background', '#DA2422');
-                    console.log(count);
-                    if (count > 1) {
-                        $('.tops').html("<p>Вопросы 2 категории. 20 баллов</p>");
-                    } else {
-                        $('.tops').html("<p>Вопросы 3 категории. 40 баллов</p>");
-                    }
-
                     $('.cat_tr ').css("backgroundImage", "url(img/cat_s.gif )").css("backgroundSize", "contain").css("backgroundRepeat", "noRepeat");
 
-                    if (pos === 1) {
+                    if (count == 2 || count == 3) {
+                        $('.tops').html("<p>Вопросы 2 категории. 20 баллов</p>");
+                    } else if (count == 4 || count == 5) {
+                        $('.tops').html("<p>Вопросы 3 категории. 30 баллов</p>");
+                    }
 
+                    if (pos === 1) {
                         pos = 0;
                     }
-                    if (stWin == true) {
-                        $('.cat_tr').removeClass('nise');
-                        $('.en_tr').removeClass('en_nise');
-                    }
-                    if (stWin == false) {
-                        $('.cat_tr2').removeClass('nise');
-                        $('.en_tr').removeClass('en_nise');
-                    }
+
                     $(this).find("span").css('color', '#FFF').css({
                         "font-weight": "bold"
                     });
                     var nv = $(this).attr('data-nv');
-                    $('.coment_block').find('#k' + nv).delay(500).fadeIn().css('background', '#DA2422');
+                    $('.coment_block').find('#k' + nv).css('background', '#DA2422');
                     if (stWin == false) {
-                        $('.coment_block_bot').find('#k' + nv).delay(500).fadeIn().css('background', '#DA2422');
+                        $('.coment_block_bot').find('#k' + nv).css('background', '#DA2422');
                         $('.babl').html("<p> Ну вот... неправильно </p>");
                         TweenMax.to('.babl', 1, { autoAlpha: 1 });
                     }
@@ -219,15 +201,13 @@ function stContent() {
                     $('.cat_tr ').css("backgroundImage", "url(img/cat.gif )").css("backgroundSize", "contain").css("backgroundRepeat", "noRepeat");
                     if (count < 5) {
                         count++;
-
                         $('.option').css('background', '#fff');
                         $('.option').find("span").css('color', '#000').css({
                             "font-weight": "normal"
                         });
-                        $(this).find('.coment').hide();
-                        $('.coment_block').find('.coment').hide();
+
                         if (stWin == false) {
-                            $('.coment_block_bot').find('.coment').hide();
+                            TweenMax.to('.coment_block', 0.8, { autoAlpha: 0 });
                         }
                         disabledClick = false;
                         $('.vop' + vop).hide();
@@ -247,6 +227,7 @@ function stContent() {
                             $('.za_score').html('Поздравляем!!!');
                             $('.babl').html("<p>Ура! Я выиграл! </p>");
                             TweenMax.to('.babl', 1, { autoAlpha: 1 });
+
                         } else {
                             $('.za_score').html('Нужно потренироваться.');
                         }
@@ -262,6 +243,7 @@ function stContent() {
 
 
                         setTimeout(function() {
+                            TweenMax.to('.babl', 1, { autoAlpha: 0 });
                             $('#training').delay(200).fadeOut(600, "linear");
                             $('#training').css({
                                 'opacity': ' 1'
@@ -283,16 +265,13 @@ function stContent() {
 
         function nuMstaK(ns) {
             nusStak = parseInt(nusStak) + parseInt(ns)
-
-            if (nusStak < 120) {
-
+            if (nusStak < 121) {
                 TweenMax.to('.lains_in', 0.5, {
                     width: (155 * nusStak) / 120 + 'px'
                 });
             }
             $('.tec_num').html(nusStak);
 
-            console.log(nusStak);
         }
     }
 }
