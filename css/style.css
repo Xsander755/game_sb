@@ -87,13 +87,14 @@
 
 .cat_tr {
     position: absolute;
-    background: url(../img/cat.png) no-repeat;
+    background-image: url(../img/cat.gif);
     background-size: contain;
-    width: 16.3%;
-    height: 36.8%;
-    top: 68%;
-    left: calc(50% - 26.3%);
+    width: 24.3%;
+    height: 50.8%;
+    top: 64%;
+    left: calc(50% - 27.3%);
     z-index: 5;
+    background-repeat: no-repeat;
 }
 
 .cat_tr2 {
@@ -461,7 +462,7 @@ span p {
     color: #50A959;
     font-size: 33px;
     left: 90px;
-    top: 25%;
+    top: 10%;
     font-weight: 600;
     font-family: 'Roboto', sans-serif;
 }
@@ -473,7 +474,7 @@ span p {
     color: #DA2422;
     font-size: 33px;
     margin-left: 90px;
-    top: 25%;
+    top: 10%;
     font-weight: 600;
     font-family: 'Roboto', sans-serif;
 }
@@ -485,7 +486,19 @@ span p {
     color: #50A959;
     font-size: 33px;
     left: 90px;
-    top: 25%;
+    top: 10%;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+}
+
+.za_score {
+    position: relative;
+    width: 100%;
+    height: 20%;
+    color: #50A959;
+    font-size: 33px;
+    text-align: center;
+    top: 5%;
     font-weight: 600;
     font-family: 'Roboto', sans-serif;
 }
@@ -501,8 +514,44 @@ span p {
     visibility: visible;
 }
 
+.babl {
+    position: relative;
+    background: url(../img/cloud_r.png) no-repeat;
+    background-size: contain;
+    width: 203px;
+    height: 76px;
+    left: 72%;
+    top: 20%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.6em;
+    visibility: hidden;
+}
+
+.babl p {
+    padding: 5px;
+    margin-left: 25px;
+}
+
+.tops {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #dd9b29;
+    height: 50px;
+}
+
 :-webkit-full-screen .verno {
     font-size: 105px;
+}
+
+.tops p {
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
 }
 
  :-webkit-full-screen .ne_verno {
@@ -573,4 +622,21 @@ span p {
     background-size: contain;
     width: 45px;
     height: 61px;
+}
+
+:-webkit-full-screen .babl {
+    width: 400px;
+    height: 150px;
+    left: 72%;
+    top: 25%;
+}
+
+:-webkit-full-screen .babl p {
+    font-size: 2.1em;
+    padding: 5px;
+    margin-left: 45px;
+}
+
+:-webkit-full-screen .za_score {
+    font-size: 99px;
 }
