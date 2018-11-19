@@ -11,6 +11,7 @@ $(function() {
     });
 
     $('.btn_training').click(function() {
+        TweenMax.set('.score', { autoAlpha: 0 });
         $('#initial_screen').fadeOut(600, "linear");
         $('#training').css({
             'opacity': ' 1'
@@ -18,6 +19,12 @@ $(function() {
         $('#training').delay(200).fadeIn(600, "linear");
         vop = 1;
         stWin = true;
+
+        var nusStak = 0;
+        $('.tec_num').html(nusStak);
+        TweenMax.set('.lains_in', {
+            width: 0
+        });
         stContent();
 
     });
@@ -122,6 +129,7 @@ function stContent() {
     function initBtn() {
         var count = 0;
         var score = 0;
+        var pos = 0;
 
 
         $('.option').click(function() {
@@ -147,7 +155,10 @@ function stContent() {
                     if (stWin == false) {
                         $('.coment_block_bot').find('#k' + nv).delay(500).fadeIn().css('background', '#73a95f');
                     }
-
+                    if (pos === 0) {
+                        TweenMax.to('.ul_g', 0.2, { autoAlpha: 0 });
+                        pos = 1;
+                    }
                     if (count < 2) {
                         nuMstaK(10);
                     } else
@@ -160,7 +171,10 @@ function stContent() {
                     score++;
                 } else {
                     $(this).css('background', '#DA2422');
-
+                    if (pos === 1) {
+                        TweenMax.to('.ul_g', 0.2, { autoAlpha: 1 });
+                        pos = 0;
+                    }
                     if (stWin == true) {
                         $('.cat_tr').removeClass('nise');
                         $('.en_tr').removeClass('en_nise');
@@ -205,6 +219,11 @@ function stContent() {
                         $('.verno').html('Верных ответов : ' + score);
                         $('.ne_verno').html('Не верных ответов : ' + (6 - score));
                         $('.bals').html('Набранно балов : ' + nusStak);
+                        if (score == 6) {
+                            console.log('po');
+                        } else {
+                            console.log('v sh');
+                        }
 
                         TweenMax.to('.content_sp', 0.7, { autoAlpha: 0, delay: 0.5 });
                         TweenMax.to('.coment_block', 0.8, { autoAlpha: 0 });
@@ -215,6 +234,16 @@ function stContent() {
                             delay: 1.5
                         }, 0.25);
                         console.log(nusStak);
+
+                        setTimeout(function() {
+
+
+                            $('#training').delay(200).fadeOut(600, "linear");
+                            $('#training').css({
+                                'opacity': ' 1'
+                            });
+                            $('#initial_screen').fadeIn(600, "linear");
+                        }, time_nex);
                     }
                 }, time_nex);
             }
@@ -227,7 +256,6 @@ function stContent() {
 
 
         var nusStak = $('.tec_num').attr('data');
-        var lever = 1;
 
         function nuMstaK(ns) {
             nusStak = parseInt(nusStak) + parseInt(ns)
@@ -243,16 +271,4 @@ function stContent() {
             console.log(nusStak);
         }
     }
-
-    // function rOvno() {
-    //     jQuery.fn.verticalAlign = function() {
-    //         console.log($(this));
-    //         console.log($(this).parent());
-    //         console.log($(this).parent().height());
-    //         console.log($(this).height() / 2);
-    //         return this.css("margin-top", ($(this).parent().height() - $(this).height()) / 2 + 'px');
-    //     }
-    //     $('.option span').verticalAlign();
-    // }
-
 }
