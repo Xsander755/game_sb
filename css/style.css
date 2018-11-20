@@ -271,6 +271,7 @@ span p {
     margin-left: 3.5%;
     display: inline-block;
     vertical-align: middle;
+    word-break: break-all;
 }
 
 .coment {
@@ -682,26 +683,26 @@ span p {
     position: relative;
     left: 2.5%;
     width: 95%;
-    height: 52%;
+    height: 60%;
     background: #fff;
     top: 70px;
 }
 
 .splashs_l .content_sp {
-    width: 97%;
+    width: 95%;
     top: 3%;
 }
 
 .splashs_l .content_sp .option {
-    position: relative;
-    top: 4px;
-    border: 1px solid #E6E6E6;
-    height: 28px;
-    line-height: 28px;
-    cursor: pointer;
-    overflow: hidden;
-    left: -16px;
-    vertical-align: middle;
+  position: relative;
+top: 4px;
+border: 1px solid #E6E6E6;
+height: 33px;
+line-height: 33px;
+cursor: pointer;
+overflow: hidden;
+left: -16px;
+vertical-align: middle;
 }
 
 .splashs_l .content_sp .option span {
@@ -716,28 +717,28 @@ span p {
 /*Правое*/
 
 .splashs_r .content_sp {
-    width: 97%;
+    width: 95%;
     top: 3%;
 }
 
 .splashs_r .content_sp .option {
-    position: relative;
-    top: 4px;
-    border: 1px solid #E6E6E6;
-    height: 28px;
-    line-height: 28px;
-    cursor: pointer;
-    overflow: hidden;
-    left: -16px;
-    vertical-align: middle;
+  position: relative;
+top: 4px;
+border: 1px solid #E6E6E6;
+height: 33px;
+line-height: 33px;
+cursor: pointer;
+overflow: hidden;
+left: -16px;
+vertical-align: middle;
 }
 
 .splashs_r .content_sp .option span {
-    font-size: 10px;
+    font-size: 9px;
 }
 
 .splashs_r .content_sp .subject span {
-    font-size: 10px;
+    font-size: 9px;
 }
 
 .brony {

@@ -345,13 +345,13 @@ function stContent(vg) {
                         if (vop < 6) {
                             vop++;
                             if (vop === 1 || vop === 2) {
-                                tImest(6);
+                                tImest(61);
                             }
                             if (vop === 3 || vop === 4) {
-                                tImest(6);
+                                tImest(41);
                             }
                             if (vop === 5 || vop === 6) {
-                                tImest(6);
+                                tImest(21);
                             }
                         }
                         $('.vop' + vop).delay(200).fadeIn(600);
@@ -436,13 +436,13 @@ function stContent(vg) {
                 if (vop < 6) {
                     vop++;
                     if (vop === 1 || vop === 2) {
-                        tImest(6);
+                        tImest(61);
                     }
                     if (vop === 3 || vop === 4) {
-                        tImest(6);
+                        tImest(41);
                     }
                     if (vop === 5 || vop === 6) {
-                        tImest(6);
+                        tImest(21);
                     }
                     if (count == 2 || count == 3) {
                         $('.tops').html("<p>Вопросы 2 уровня. 20 баллов</p>");
