@@ -46,8 +46,7 @@
     background-size: contain;
     width: 34.5%;
     height: 6.8%;
-    left: 50%;
-    margin-left: -12.25%;
+    left: calc((100% - 34.5%)/2);
     bottom: 0;
     cursor: pointer;
     z-index: 6;
@@ -530,8 +529,32 @@ span p {
     height: 50px;
 }
 
-:-webkit-full-screen .verno {
-    font-size: 105px;
+.tops2 {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background: #dd9b29;
+    border-top: 4px solid #fff;
+    height: 50px;
+}
+
+.var_bloc_left {
+    position: absolute;
+    left: 0;
+    width: 50%;
+    height: calc(100% - 50px);
+    top: 50px;
+    border-right: 4px solid #fff;
+}
+
+.var_bloc_right {
+    position: absolute;
+    left: 50%;
+    width: 50%;
+    height: calc(100% - 50px);
+    top: 50px;
+    border-left: 4px solid #fff;
 }
 
 .tops p {
@@ -541,6 +564,187 @@ span p {
     width: 100%;
     text-align: center;
     margin-top: 15px;
+}
+
+.not_tr {
+    position: absolute;
+    background-image: url(../img/not.gif);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 22.6%;
+    height: 40.8%;
+    top: 65.6%;
+    left: calc(50% + 3.3%);
+}
+
+.timers {
+    position: absolute;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    top: 12px;
+}
+
+.balls_r {
+    position: absolute;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    top: 12px;
+    left: 36px;
+}
+
+.balls_l {
+    position: absolute;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    top: 12px;
+    right: 40px;
+}
+
+#tm_l {
+    left: 40px;
+}
+
+#tm_r {
+    right: 44px;
+}
+
+.timer_icon_l {
+    position: absolute;
+    width: 19px;
+    height: 24px;
+    top: 17px;
+    left: 10px;
+    background: url(../img/clocs.svg) no-repeat;
+}
+
+.timer_icon_r {
+    position: absolute;
+    width: 19px;
+    height: 24px;
+    top: 17px;
+    right: 15px;
+    background: url(../img/clocs.svg) no-repeat;
+}
+
+.babl_r {
+    position: absolute;
+    background: url(../img/cloud_r.png) no-repeat;
+    background-size: contain;
+    width: 203px;
+    height: 76px;
+    right: 4%;
+    bottom: 5%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.6em;
+    z-index: 10;
+    visibility: hidden;
+}
+
+.babl_l {
+    position: absolute;
+    background: url(../img/cloud_l.png) no-repeat;
+    background-size: contain;
+    width: 203px;
+    height: 76px;
+    left: 3%;
+    bottom: 7%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    z-index: 10;
+    visibility: hidden;
+}
+
+.babl_l p {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    line-height: 22px;
+    top: 25px;
+}
+
+.splashs_r,
+.splashs_l {
+    position: relative;
+    left: 2.5%;
+    width: 95%;
+    height: 52%;
+    background: #fff;
+    top: 70px;
+}
+
+.splashs_l .content_sp {
+    width: 97%;
+    top: 3%;
+}
+
+.splashs_l .content_sp .option {
+    position: relative;
+    top: 4px;
+    border: 1px solid #E6E6E6;
+    height: 28px;
+    line-height: 28px;
+    cursor: pointer;
+    overflow: hidden;
+    left: -16px;
+    vertical-align: middle;
+}
+
+.splashs_l .content_sp .option span {
+    font-size: 10px;
+}
+
+.splashs_l .content_sp .subject span {
+    font-size: 10px;
+}
+
+
+/*Правое*/
+
+.splashs_r .content_sp {
+    width: 97%;
+    top: 3%;
+}
+
+.splashs_r .content_sp .option {
+    position: relative;
+    top: 4px;
+    border: 1px solid #E6E6E6;
+    height: 28px;
+    line-height: 28px;
+    cursor: pointer;
+    overflow: hidden;
+    left: -16px;
+    vertical-align: middle;
+}
+
+.splashs_r .content_sp .option span {
+    font-size: 10px;
+}
+
+.splashs_r .content_sp .subject span {
+    font-size: 10px;
+}
+
+.brony {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: transparent;
+}
+
+
+/*Фуллскрин*/
+
+:-webkit-full-screen .verno {
+    font-size: 105px;
 }
 
  :-webkit-full-screen .ne_verno {
@@ -598,9 +802,15 @@ span p {
 }
 
 :-webkit-full-screen .cat_tr {
-    width: 18%;
+    width: 22%;
     top: 64%;
-    left: calc(50% - 32.2%);
+    left: calc(50% - 33%);
+}
+
+:-webkit-full-screen .not_tr {
+    width: 25%;
+    top: 65%;
+    left: calc(50% + 9%);
 }
 
 :-webkit-full-screen .ul_g {
@@ -620,7 +830,15 @@ span p {
     top: 25%;
 }
 
-:-webkit-full-screen .babl p {
+:-webkit-full-screen .babl_l,
+:-webkit-full-screen .babl_r {
+    width: 450px;
+    height: 200px;
+}
+
+:-webkit-full-screen .babl p,
+:-webkit-full-screen .babl_l p,
+:-webkit-full-screen .babl_r p {
     font-size: 2.1em;
     padding: 5px;
     margin-left: 45px;
@@ -629,3 +847,91 @@ span p {
 :-webkit-full-screen .za_score {
     font-size: 99px;
 }
+
+:-webkit-full-screen .tops p {
+    position: absolute;
+    top: -10px;
+    font-size: 32px;
+}
+
+:-webkit-full-screen .splashs_l .content_sp {
+    width: 75%;
+    top: 3%;
+}
+
+:-webkit-full-screen .splashs_l .content_sp .option {
+    position: relative;
+    top: 40px;
+    border: 1px solid #E6E6E6;
+    height: 70px;
+    line-height: 70px;
+    cursor: pointer;
+    overflow: hidden;
+    left: -16px;
+    vertical-align: middle;
+}
+
+:-webkit-full-screen .splashs_l .content_sp .option span {
+    font-size: 18px;
+}
+
+:-webkit-full-screen .splashs_l .content_sp .subject span {
+    font-size: 22px;
+}
+
+
+/*Правое*/
+
+:-webkit-full-screen .splashs_r .content_sp {
+    width: 75%;
+    top: 3%;
+}
+
+:-webkit-full-screen .splashs_r .content_sp .option {
+    position: relative;
+    top: 40px;
+    border: 1px solid #E6E6E6;
+    height: 70px;
+    line-height: 70px;
+    cursor: pointer;
+    overflow: hidden;
+    left: -16px;
+    vertical-align: middle;
+}
+
+:-webkit-full-screen .splashs_r .content_sp .option span {
+    font-size: 18px;
+}
+
+:-webkit-full-screen .splashs_r .content_sp .subject span {
+    font-size: 22px;
+}
+
+:-webkit-full-screen .brony {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: transparent;
+}
+
+:-webkit-full-screen .babl_l p {}
+
+
+/* :-webkit-full-screen */
+
+
+/* :-webkit-full-screen */
+
+
+/* :-webkit-full-screen */
+
+
+/* :-webkit-full-screen */
+
+
+/* :-webkit-full-screen */
+
+
+/* :-webkit-full-screen */

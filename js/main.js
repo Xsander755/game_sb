@@ -1,15 +1,20 @@
-$(function() {
-    //start_timer_goTo_function
-    /*   if (stWin == false) {
-        var fiveMinutes = 60 * 20,
-            display = document.querySelector('#time');
-        startTimer(fiveMinutes, display);
-    }*/
+var page;
 
+var pr = "Привет!";
+var tempo = "Поторопись!";
+var vic_cot = "Ура! Я выиграл!";
+var vic_not = "Я победил!";
+var vr_sovet = "Я бы выбрал первое";
+var luser = "Ты проиграешь!";
+var vremy;
+var fiveMinutes;
+var vs;
+
+
+$(function() {
     $('.game_wrapp').fadeIn(600, "linear", function() {
         $('#initial_screen').delay(200).fadeIn(600, "linear");
     });
-
     $('.btn_training').click(function() {
         TweenMax.set('.score', { autoAlpha: 0 });
         $('#initial_screen').fadeOut(600, "linear");
@@ -25,35 +30,22 @@ $(function() {
         TweenMax.set('.lains_in', {
             width: 0
         });
-        stContent();
+        page = "training";
+        stContent(0);
 
     });
-
     $('.btn_testing').click(function() {
         TweenMax.set('.score', { autoAlpha: 0 });
         $('#initial_screen').fadeOut(600, "linear");
         $('#testing').css({ 'opacity': '1' });
         $('#testing').delay(200).fadeIn(600, "linear");
+        $('.tops').html("<p>Вопросы 1 категории. 10 баллов</p>");
+        $('.babl_l').html('<p>' + pr + '</p>');
+        TweenMax.to('.babl_l', 1, { autoAlpha: 1, delay: 1 });
+        TweenMax.to('.babl_l', 1, { autoAlpha: 0, delay: 3, onComplete: tImest(60) });
+        page = "testing";
+        stContent(1);
     });
-    //Таймер
-    function startTimer(duration, display) {
-        var timer = duration,
-            minutes, seconds;
-        setInterval(function() {
-            minutes = parseInt(timer / 60, 10)
-            seconds = parseInt(timer % 60, 10);
-
-            minutes = minutes < 10 ? "0" + minutes : minutes;
-            seconds = seconds < 10 ? "0" + seconds : seconds;
-
-            display.textContent = minutes + ":" + seconds;
-
-            if (--timer < 0) {
-                document.location.reload();
-                timer = duration;
-            }
-        }, 1000);
-    }
 
     //fullscreen
 
@@ -67,58 +59,137 @@ $(function() {
             element.webkitRequestFullScreen();
         }
     });
-
 });
 
 
-function stContent() {
+function tImest(vr) {
+    vremy = setInterval(function() {
+        vr = vr - 1;
+        if (vr > 0) {
+            $('.timers').html(vr);
+        }
+        if (vr === 12) {
+            $('.babl_l').html('<p>' + tempo + '</p>');
+            TweenMax.to('.babl_l', 0.5, { autoAlpha: 1, delay: 1 });
+            TweenMax.to('.babl_l', 0.5, { autoAlpha: 0, delay: 2 });
+        }
+    }, 1000)
+}
+
+
+function stContent(vg) {
     $.getJSON('js/main.json', function(data) {
         $.each(data, function(index) {
-            var r = data.main_game.quest_feedback.length;
-            var qu_lenght = data.main_game.quest.length;
 
+            if (vg == 0) {
 
-            for (var i = 0; i < qu_lenght; i++) {
-                var zadacha = data.main_game.quest[i];
-                $('.splash').append('<section class="content_sp vop' + (i + 1) + '">' +
-                    //Описание задачи
-                    '<div class="subject">' +
-                    '<span>' +
-                    zadacha.quest_text +
-                    '</span></div>' +
-                    // Действие
-                    ' <div class="caption">' +
-                    '<h3>' + zadacha.quest_active +
-                    '</h3></div>' +
-                    //Вопросы
-                    //во1
-                    '<div class="option" id="v1" data="' + zadacha.quest_vo[0].ext.data +
-                    '" data-nv="' + zadacha.quest_vo[0].ext.data_nv + '"><span class="sp">' +
-                    zadacha.quest_vo[0].ext.tx + '</span></div>' +
-                    //во2
-                    '<div class="option" id="v2" data="' + zadacha.quest_vo[1].ext.data +
-                    '" data-nv="' + zadacha.quest_vo[1].ext.data_nv + '"><span class="sp">' +
-                    zadacha.quest_vo[1].ext.tx + '</span></div>' +
-                    //во3
-                    '<div class="option" id="v3" data="' + zadacha.quest_vo[2].ext.data +
-                    '" data-nv="' + zadacha.quest_vo[2].ext.data_nv + '"><span class="sp">' +
-                    zadacha.quest_vo[2].ext.tx + '</span></div>' +
-                    //во4
-                    '<div class="option" id="v4" data="' + zadacha.quest_vo[3].ext.data +
-                    '" data-nv="' + zadacha.quest_vo[3].ext.data_nv + '"><span class="sp">' +
-                    zadacha.quest_vo[3].ext.tx + '</span></div>' +
-                    '</section>');
+                var r = data.main_game.quest_feedback.length;
+                var qu_lenght = data.main_game.quest.length;
+                for (var i = 0; i < qu_lenght; i++) {
+                    var zadacha = data.main_game.quest[i];
+                    $('.splash').append('<section class="content_sp vop' + (i + 1) + '">' +
+                        //Описание задачи
+                        '<div class="subject">' +
+                        '<span>' +
+                        zadacha.quest_text +
+                        '</span></div>' +
+                        // Действие
+                        ' <div class="caption">' +
+                        '<h3>' + zadacha.quest_active +
+                        '</h3></div>' +
+                        //Вопросы
+                        //во1
+                        '<div class="option" id="v1" data="' + zadacha.quest_vo[0].ext.data +
+                        '" data-nv="' + zadacha.quest_vo[0].ext.data_nv + '"><span class="sp">' +
+                        zadacha.quest_vo[0].ext.tx + '</span></div>' +
+                        //во2
+                        '<div class="option" id="v2" data="' + zadacha.quest_vo[1].ext.data +
+                        '" data-nv="' + zadacha.quest_vo[1].ext.data_nv + '"><span class="sp">' +
+                        zadacha.quest_vo[1].ext.tx + '</span></div>' +
+                        //во3
+                        '<div class="option" id="v3" data="' + zadacha.quest_vo[2].ext.data +
+                        '" data-nv="' + zadacha.quest_vo[2].ext.data_nv + '"><span class="sp">' +
+                        zadacha.quest_vo[2].ext.tx + '</span></div>' +
+                        //во4
+                        '<div class="option" id="v4" data="' + zadacha.quest_vo[3].ext.data +
+                        '" data-nv="' + zadacha.quest_vo[3].ext.data_nv + '"><span class="sp">' +
+                        zadacha.quest_vo[3].ext.tx + '</span></div>' +
+                        '</section>');
 
-            }
+                }
+                for (var i = 0; i < r; i++) {
+                    $('.coment_block').append('<div class="coment" id="k' + (i + 1) + '">' + data.main_game.quest_feedback[i].contetn_text + '</div>');
+                }
+            } else if (vg == 1) {
+                var r = data.main_game.quest_feedback.length;
+                var qu_lenght = data.main_game.quest.length;
 
-            for (var i = 0; i < r; i++) {
-                $('.coment_block').append('<div class="coment" id="k' + (i + 1) + '">' + data.main_game.quest_feedback[i].contetn_text + '</div>');
+                for (var i = 0; i < qu_lenght; i++) {
+                    var zadacha = data.main_game.quest[i];
+                    $('.splashs_l').append('<section class="content_sp vop' + (i + 1) + '">' +
+                        //Описание задачи
+                        '<div class="subject">' +
+                        '<span>' +
+                        zadacha.quest_text +
+                        '</span></div>' +
+                        // Действие
+                        ' <div class="caption">' +
+                        '<h3>' + zadacha.quest_active +
+                        '</h3></div>' +
+                        //Вопросы
+                        //во1
+                        '<div class="option" id="v1" data="' + zadacha.quest_vo[0].ext.data +
+                        '" data-nv="' + zadacha.quest_vo[0].ext.data_nv + '"><span class="sp">' +
+                        zadacha.quest_vo[0].ext.tx + '</span></div>' +
+                        //во2
+                        '<div class="option" id="v2" data="' + zadacha.quest_vo[1].ext.data +
+                        '" data-nv="' + zadacha.quest_vo[1].ext.data_nv + '"><span class="sp">' +
+                        zadacha.quest_vo[1].ext.tx + '</span></div>' +
+                        //во3
+                        '<div class="option" id="v3" data="' + zadacha.quest_vo[2].ext.data +
+                        '" data-nv="' + zadacha.quest_vo[2].ext.data_nv + '"><span class="sp">' +
+                        zadacha.quest_vo[2].ext.tx + '</span></div>' +
+                        //во4
+                        '<div class="option" id="v4" data="' + zadacha.quest_vo[3].ext.data +
+                        '" data-nv="' + zadacha.quest_vo[3].ext.data_nv + '"><span class="sp">' +
+                        zadacha.quest_vo[3].ext.tx + '</span></div>' +
+                        '</section>');
+                    $('.splashs_r').append('<section class="content_sp vop' + (i + 1) + '">' +
+                        //Описание задачи
+                        '<div class="subject">' +
+                        '<span>' +
+                        zadacha.quest_text +
+                        '</span></div>' +
+                        // Действие
+                        ' <div class="caption">' +
+                        '<h3>' + zadacha.quest_active +
+                        '</h3></div>' +
+                        //Вопросы
+                        //во1
+                        '<div class="option" id="v1" data="' + zadacha.quest_vo[0].ext.data +
+                        '" data-nv="' + zadacha.quest_vo[0].ext.data_nv + '"><span class="sp">' +
+                        zadacha.quest_vo[0].ext.tx + '</span></div>' +
+                        //во2
+                        '<div class="option" id="v2" data="' + zadacha.quest_vo[1].ext.data +
+                        '" data-nv="' + zadacha.quest_vo[1].ext.data_nv + '"><span class="sp">' +
+                        zadacha.quest_vo[1].ext.tx + '</span></div>' +
+                        //во3
+                        '<div class="option" id="v3" data="' + zadacha.quest_vo[2].ext.data +
+                        '" data-nv="' + zadacha.quest_vo[2].ext.data_nv + '"><span class="sp">' +
+                        zadacha.quest_vo[2].ext.tx + '</span></div>' +
+                        //во4
+                        '<div class="option" id="v4" data="' + zadacha.quest_vo[3].ext.data +
+                        '" data-nv="' + zadacha.quest_vo[3].ext.data_nv + '"><span class="sp">' +
+                        zadacha.quest_vo[3].ext.tx + '</span></div>' +
+                        '</section>');
+                }
             }
         });
         initBtn();
+        $('.option').next().css("border-top", "0px ");
         //rOvno();
     });
-    $('.option').next().css("border-top", "0px ");
+
 
 
     function initBtn() {
@@ -126,14 +197,13 @@ function stContent() {
         var score = 0;
         var pos = 0;
 
-        $('.tops').html("<p>Вопросы 1 категории. 10 баллов</p>");
+        $('.tops').html("<p>Вопросы 1 уровня. 10 баллов</p>");
 
         $('.option').click(function() {
-
+            clearInterval(vremy);
             if (disabledClick === true) {
                 return false;
             } else {
-
                 if ($(this).attr('data') == 1) {
                     $(this).css('background', '#73a95f');
                     $(this).find("span").css('color', '#FFF').css({
@@ -145,6 +215,7 @@ function stContent() {
                         $('.coment_block_bot').find('#k' + nv).delay(500).fadeIn().css('background', '#73a95f');
 
                         $('.cat_tr ').css("backgroundImage", "url(img/cat_n.gif )").css("backgroundSize", "contain").css("backgroundRepeat", "noRepeat");
+                        $('.not_tr ').css("backgroundImage", "url(img/not_s.gif )").css("backgroundSize", "contain").css("backgroundRepeat", "noRepeat");
                         $('.babl').html("<p> Ура! Правильно!</p>");
                         TweenMax.to('.babl', 1, { autoAlpha: 1 });
 
@@ -156,24 +227,28 @@ function stContent() {
                     console.log(count);
                     if (count == 0 || count == 1) {
                         nuMstaK(10);
+                        tImest(60);
                     } else
                     if (count == 2 || count == 3) {
                         nuMstaK(20);
-                        $('.tops').html("<p>Вопросы 2 категории. 20 баллов</p>");
+                        tImest(40);
+                        $('.tops').html("<p>Вопросы 2 уровня. 20 баллов</p>");
                     } else if (count == 4 || count == 5) {
                         nuMstaK(30);
-                        $('.tops').html("<p>Вопросы 3 категории. 30 баллов</p>");
+                        tImest(20);
+                        $('.tops').html("<p>Вопросы 3 уровня. 30 баллов</p>");
                     }
 
                     score++;
                 } else {
                     $(this).css('background', '#DA2422');
                     $('.cat_tr ').css("backgroundImage", "url(img/cat_s.gif )").css("backgroundSize", "contain").css("backgroundRepeat", "noRepeat");
+                    $('.not_tr ').css("backgroundImage", "url(img/not_n.gif )").css("backgroundSize", "contain").css("backgroundRepeat", "noRepeat");
 
                     if (count == 2 || count == 3) {
-                        $('.tops').html("<p>Вопросы 2 категории. 20 баллов</p>");
+                        $('.tops').html("<p>Вопросы 2 уровня. 20 баллов</p>");
                     } else if (count == 4 || count == 5) {
-                        $('.tops').html("<p>Вопросы 3 категории. 30 баллов</p>");
+                        $('.tops').html("<p>Вопросы 3 уровня. 30 баллов</p>");
                     }
 
                     if (pos === 1) {
@@ -198,6 +273,7 @@ function stContent() {
                         autoAlpha: 0
                     });
                     $('.cat_tr ').css("backgroundImage", "url(img/cat.gif )").css("backgroundSize", "contain").css("backgroundRepeat", "noRepeat");
+                    $('.not_tr ').css("backgroundImage", "url(img/not.gif )").css("backgroundSize", "contain").css("backgroundRepeat", "noRepeat");
                     if (count < 5) {
                         count++;
                         $('.option').css('background', '#fff');
@@ -206,16 +282,22 @@ function stContent() {
                         });
 
                         if (stWin == false) {
-                            $('.coment_block').find('#k' + nv).fadeOut().css('background', '#DA2422');
+                            $('.coment_block').find('#k' + nv).fadeOut();
                         }
                         disabledClick = false;
                         $('.vop' + vop).hide();
-                        if (vop < 3) {
+                        if (vop < 6) {
                             vop++;
-                        } else {
-                            vop = 1;
+                            if (vop === 1 || vop === 2) {
+                                tImest(61);
+                            }
+                            if (vop === 3 || vop === 4) {
+                                tImest(41);
+                            }
+                            if (vop === 5 || vop === 6) {
+                                tImest(21);
+                            }
                         }
-
                         $('.vop' + vop).delay(200).fadeIn(600);
                     } else {
                         //TweenMax.to('.babl', 1, { autoAlpha: 0 });
@@ -251,8 +333,10 @@ function stContent() {
                             });
                             $('#initial_screen').fadeIn(600, "linear");
                         }, 6500);
+
+
                     }
-                }, time_nex);
+                }, 4500);
             }
 
         });
@@ -272,6 +356,7 @@ function stContent() {
                 });
             }
             $('.tec_num').html(nusStak);
+            $('.balls_l').html(nusStak);
 
         }
     }
