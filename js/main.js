@@ -30,13 +30,11 @@ $(function() {
     });
 
     $('.btn_testing').click(function() {
-
+        TweenMax.set('.score', { autoAlpha: 0 });
+        $('#initial_screen').fadeOut(600, "linear");
+        $('#testing').css({ 'opacity': '1' });
+        $('#testing').delay(200).fadeIn(600, "linear");
     });
-
-
-
-    //nuMstaK(nusStak);
-
     //Таймер
     function startTimer(duration, display) {
         var timer = duration,
@@ -220,7 +218,7 @@ function stContent() {
 
                         $('.vop' + vop).delay(200).fadeIn(600);
                     } else {
-
+                        //TweenMax.to('.babl', 1, { autoAlpha: 0 });
                         $('.verno').html('Верных ответов : ' + score);
                         $('.ne_verno').html('Не верных ответов : ' + (6 - score));
                         $('.bals').html('Набранно балов : ' + nusStak);
@@ -228,8 +226,7 @@ function stContent() {
                             $('.za_score').html('Поздравляем!!!');
                             $('.babl').html("<p>Ура! Я выиграл! </p>");
                             TweenMax.to('.babl', 1, { autoAlpha: 1 });
-                            var num_ball = nusStak;
-                            setGameResult(num_ball);
+
                         } else {
                             $('.za_score').html('Нужно потренироваться.');
                         }
