@@ -9,7 +9,8 @@ var luser = "Ты проиграешь!";
 var vremy;
 var fiveMinutes;
 var vs;
-
+var st = 0;
+var score = 0;
 
 $(function() {
     $('.game_wrapp').fadeIn(600, "linear", function() {
@@ -65,6 +66,7 @@ $(function() {
 function tImest(vr) {
     vremy = setInterval(function() {
         vr = vr - 1;
+        var rs = vr;
         if (vr > 0) {
             $('.timers').html(vr);
         }
@@ -73,9 +75,18 @@ function tImest(vr) {
             TweenMax.to('.babl_l', 0.5, { autoAlpha: 1, delay: 1 });
             TweenMax.to('.babl_l', 0.5, { autoAlpha: 0, delay: 2 });
         }
+        if (vr == (0 + 10)) {
+            stBot();
+        }
+        if (vr === 0) {
+            stBot();
+        }
     }, 1000)
 }
 
+function stBot() {
+
+}
 
 function stContent(vg) {
     $.getJSON('js/main.json', function(data) {
@@ -194,7 +205,7 @@ function stContent(vg) {
 
     function initBtn() {
         var count = 0;
-        var score = 0;
+        score = 0;
         var pos = 0;
 
         $('.tops').html("<p>Вопросы 1 уровня. 10 баллов</p>");
@@ -204,6 +215,7 @@ function stContent(vg) {
             if (disabledClick === true) {
                 return false;
             } else {
+
                 if ($(this).attr('data') == 1) {
                     $(this).css('background', '#73a95f');
                     $(this).find("span").css('color', '#FFF').css({
@@ -227,15 +239,12 @@ function stContent(vg) {
                     console.log(count);
                     if (count == 0 || count == 1) {
                         nuMstaK(10);
-                        tImest(60);
                     } else
                     if (count == 2 || count == 3) {
                         nuMstaK(20);
-                        tImest(40);
                         $('.tops').html("<p>Вопросы 2 уровня. 20 баллов</p>");
                     } else if (count == 4 || count == 5) {
                         nuMstaK(30);
-                        tImest(20);
                         $('.tops').html("<p>Вопросы 3 уровня. 30 баллов</p>");
                     }
 
@@ -244,6 +253,11 @@ function stContent(vg) {
                     $(this).css('background', '#DA2422');
                     $('.cat_tr ').css("backgroundImage", "url(img/cat_s.gif )").css("backgroundSize", "contain").css("backgroundRepeat", "noRepeat");
                     $('.not_tr ').css("backgroundImage", "url(img/not_n.gif )").css("backgroundSize", "contain").css("backgroundRepeat", "noRepeat");
+
+                    $('.babl_r').html('<p>' + luser + '</p>');
+                    TweenMax.to('.babl_r', 0.5, { autoAlpha: 1, delay: 1 });
+                    TweenMax.to('.babl_r', 0.5, { autoAlpha: 0, delay: 3 });
+                    nuMstaK(-10);
 
                     if (count == 2 || count == 3) {
                         $('.tops').html("<p>Вопросы 2 уровня. 20 баллов</p>");
@@ -261,6 +275,9 @@ function stContent(vg) {
                     var nv = $(this).attr('data-nv');
 
                     $('.coment_block').find('#k' + nv).delay(500).fadeIn().css('background', '#DA2422');
+                    if (page = "testing") {
+
+                    }
                     if (stWin == false) {
                         $('.coment_block_bot').find('#k' + nv).delay(500).fadeIn().css('background', '#DA2422');
                         $('.babl').html("<p> Ну вот... неправильно </p>");
@@ -276,7 +293,7 @@ function stContent(vg) {
                     $('.not_tr ').css("backgroundImage", "url(img/not.gif )").css("backgroundSize", "contain").css("backgroundRepeat", "noRepeat");
                     if (count < 5) {
                         count++;
-                        $('.option').css('background', '#fff');
+                        $('.option').css('background', 'transparent');
                         $('.option').find("span").css('color', '#000').css({
                             "font-weight": "normal"
                         });
@@ -300,7 +317,26 @@ function stContent(vg) {
                         }
                         $('.vop' + vop).delay(200).fadeIn(600);
                     } else {
-                        //TweenMax.to('.babl', 1, { autoAlpha: 0 });
+
+                        if (page = "testing") {
+                            $('.timers').html(100);
+                            $('.scchet p').html(score + ':3');
+                            TweenMax.to('.scchet', 1, { autoAlpha: 1 });
+                            if (score < 3) {
+                                $('.babl_r').html('<p>' + vic_not + '</p>');
+                                TweenMax.to('.babl_r', 0.5, { autoAlpha: 1, delay: 1 });
+                                TweenMax.to('.babl_r', 0.5, { autoAlpha: 0, delay: 3, onComplete: eXit });
+                            } else {
+                                $('.babl_l').html('<p>' + vic_cot + '</p>');
+                                TweenMax.to('.babl_l', 0.5, { autoAlpha: 1, delay: 1 });
+                                TweenMax.to('.babl_l', 0.5, { autoAlpha: 0, delay: 3, onComplete: eXit });
+                                setGameResult(nusStak);
+                            }
+
+                        }
+
+
+
                         $('.verno').html('Верных ответов : ' + score);
                         $('.ne_verno').html('Не верных ответов : ' + (6 - score));
                         $('.bals').html('Набранно балов : ' + nusStak);
@@ -336,7 +372,13 @@ function stContent(vg) {
 
 
                     }
-                }, 4500);
+                }, 1500);
+            }
+
+            function eXit() {
+                setTimeout(function() {
+                    document.location.reload();
+                }, 1000);
             }
 
         });

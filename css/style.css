@@ -575,6 +575,7 @@ span p {
     height: 40.8%;
     top: 65.6%;
     left: calc(50% + 3.3%);
+    z-index: 5;
 }
 
 .timers {
@@ -641,7 +642,7 @@ span p {
     right: 4%;
     bottom: 5%;
     font-family: 'Roboto', sans-serif;
-    font-size: 1.6em;
+    font-size: 1.4em;
     z-index: 10;
     visibility: hidden;
 }
@@ -665,6 +666,14 @@ span p {
     width: 100%;
     text-align: center;
     line-height: 22px;
+    top: 25px;
+}
+
+.babl_r p {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    line-height: 24px;
     top: 25px;
 }
 
@@ -738,6 +747,29 @@ span p {
     left: 0;
     top: 0;
     background: transparent;
+}
+
+.scchet {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 120px;
+    font-size: 3em;
+    font-family: Roboto;
+    color: #50A959;
+    font-weight: 600;
+    float: left;
+    height: 47%;
+    padding-top: 5%;
+    visibility: hidden;
+    background: #fff;
+}
+
+.scchet p {
+    font-size: 2em;
+    font-family: Roboto;
+    color: #50A959;
+    font-weight: 600;
 }
 
 
@@ -837,8 +869,7 @@ span p {
 }
 
 :-webkit-full-screen .babl p,
-:-webkit-full-screen .babl_l p,
-:-webkit-full-screen .babl_r p {
+{
     font-size: 2.1em;
     padding: 5px;
     margin-left: 45px;
@@ -916,10 +947,35 @@ span p {
     background: transparent;
 }
 
-:-webkit-full-screen .babl_l p {}
+:-webkit-full-screen .scchet p {
+    font-size: 4em;
+    line-height: 4em;
+    font-family: Roboto;
+    color: #50A959;
+    font-weight: 600;
+}
 
+ :-webkit-full-screen .babl_l p {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    line-height: 22px;
+    top: 25px;
+    font-size: 2.2em;
+    line-height: 2em;
+    margin-right: 5px;
+}
 
-/* :-webkit-full-screen */
+:-webkit-full-screen .babl_r p {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    line-height: 22px;
+    top: 25px;
+    font-size: 2.2em;
+    line-height: 2em;
+    margin: 5px;
+}
 
 
 /* :-webkit-full-screen */
