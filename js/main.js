@@ -11,7 +11,8 @@ var fiveMinutes;
 var vs;
 var st = 0;
 var score = 0;
-
+var trs;
+var anims;
 $(function() {
     $('.game_wrapp').fadeIn(600, "linear", function() {
         $('#initial_screen').delay(200).fadeIn(600, "linear");
@@ -75,17 +76,46 @@ function tImest(vr) {
             TweenMax.to('.babl_l', 0.5, { autoAlpha: 1, delay: 1 });
             TweenMax.to('.babl_l', 0.5, { autoAlpha: 0, delay: 2 });
         }
-        if (vr == (0 + 10)) {
-            stBot();
+        if (vr == 0) {
+            trs();
         }
-        if (vr === 0) {
-            stBot();
+        if (vr == (0 + 3)) {
+            anims();
         }
+
     }, 1000)
 }
 
-function stBot() {
+var anims = function anRandom() {
+    clearInterval(vremy);
+    if (score === 1) {
+        $('.splashs_r #v2').css('background', '#DA2422');
+        $('.splashs_r #v2 span').css('color', '#FFF').css({ "font-weight": "bold" });
 
+    }
+    if (score === 2) {
+        $('.splashs_r #v1').css('background', '##73a95f');
+        $('.splashs_r #v1 span').css('color', '#FFF').css({ "font-weight": "bold" });
+    }
+    if (score === 3) {
+        $('.splashs_r #v3').css('background', '#DA2422');
+        $('.splashs_r #v3 span').css('color', '#FFF').css({ "font-weight": "bold" });
+    }
+    if (score === 4) {
+        $('.splashs_r #v3').css('background', '##73a95f');
+        $('.splashs_r #v3 span').css('color', '#FFF').css({ "font-weight": "bold" });
+    }
+    if (score === 5) {
+        $('.splashs_r #v1').css('background', '#DA2422');
+        $('.splashs_r #v1 span').css('color', '#FFF').css({ "font-weight": "bold" });
+    }
+    if (score === 6) {
+        $('.splashs_r #v4').css('background', '##73a95f');
+        $('.splashs_r #v4 span').css('color', '#FFF').css({ "font-weight": "bold" });
+    }
+    setTimeout(function() {
+        trs();
+    }, 3000)
 }
 
 function stContent(vg) {
@@ -275,9 +305,7 @@ function stContent(vg) {
                     var nv = $(this).attr('data-nv');
 
                     $('.coment_block').find('#k' + nv).delay(500).fadeIn().css('background', '#DA2422');
-                    if (page = "testing") {
 
-                    }
                     if (stWin == false) {
                         $('.coment_block_bot').find('#k' + nv).delay(500).fadeIn().css('background', '#DA2422');
                         $('.babl').html("<p> Ну вот... неправильно </p>");
@@ -382,6 +410,59 @@ function stContent(vg) {
             }
 
         });
+        trs = function stBot() {
+            clearInterval(vremy);
+            if (count < 5) {
+                count++;
+                $('.option').css('background', 'transparent');
+                $('.option').find("span").css('color', '#000').css({
+                    "font-weight": "normal"
+                });
+
+
+                disabledClick = false;
+                $('.vop' + vop).hide();
+                if (vop < 6) {
+                    vop++;
+                    if (vop === 1 || vop === 2) {
+                        tImest(61);
+                    }
+                    if (vop === 3 || vop === 4) {
+                        tImest(41);
+                    }
+                    if (vop === 5 || vop === 6) {
+                        tImest(21);
+                    }
+                }
+                $('.vop' + vop).delay(200).fadeIn(600);
+            } else {
+
+                if (page = "testing") {
+                    $('.timers').html(100);
+                    $('.scchet p').html(score + ':3');
+                    TweenMax.to('.scchet', 1, { autoAlpha: 1 });
+                    if (score < 3) {
+                        $('.babl_r').html('<p>' + vic_not + '</p>');
+                        TweenMax.to('.babl_r', 0.5, { autoAlpha: 1, delay: 1 });
+                        TweenMax.to('.babl_r', 0.5, { autoAlpha: 0, delay: 3, onComplete: eXit2 });
+                    } else {
+                        $('.babl_l').html('<p>' + vic_cot + '</p>');
+                        TweenMax.to('.babl_l', 0.5, { autoAlpha: 1, delay: 1 });
+                        TweenMax.to('.babl_l', 0.5, { autoAlpha: 0, delay: 3, onComplete: eXit2 });
+                        setGameResult(nusStak);
+                    }
+
+                }
+            }
+
+            function eXit2() {
+                setTimeout(function() {
+                    document.location.reload();
+                }, 1000);
+            }
+
+        }
+
         var disabledClick = false;
         var time_nex = 5000;
         var vop = 1;
