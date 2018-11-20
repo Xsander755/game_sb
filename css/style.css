@@ -760,7 +760,7 @@ vertical-align: middle;
     color: #50A959;
     font-weight: 600;
     float: left;
-    height: 47%;
+    height: 49%;
     padding-top: 5%;
     visibility: hidden;
     background: #fff;
@@ -777,42 +777,47 @@ vertical-align: middle;
 /*Фуллскрин*/
 
 :-webkit-full-screen .verno {
-    font-size: 105px;
+    font-size: 73px;
 }
 
  :-webkit-full-screen .ne_verno {
-    font-size: 105px;
+    font-size: 73px;
 }
 
  :-webkit-full-screen .bals {
-    font-size: 105px;
+    font-size: 73px;
 }
 
 :-webkit-full-screen .content_sp {
-    width: 60%;
+    width: 71%;
     top: 10%;
 }
 
 :-webkit-full-screen p,
 :-webkit-full-screen .caption {
-    font-size: 22px;
+    font-size: 21px;
+}
+:-webkit-full-screen .cat_tr  p
+{
+    font-size: 36px;
+    margin-left: 25px;
 }
 
 :-webkit-full-screen span {
-    margin-top: 25px;
-    font-size: 25px;
+    margin-top: 12px;
+    font-size: 21px;
 }
 
 :-webkit-full-screen .caption {
     font-size: 26px;
-    margin-top: 40px;
+    margin-top:20px;
     ;
 }
 
 :-webkit-full-screen .option {
-    top: 40px;
+    top: 44px;
     position: relative;
-    height: 6em;
+    height: 4em;
 }
 
 :-webkit-full-screen .coment {
@@ -831,7 +836,7 @@ vertical-align: middle;
 
 :-webkit-full-screen .coment {
     font-size: 30px;
-    width: 90%;
+    width:100%;
 }
 
 :-webkit-full-screen .cat_tr {
@@ -857,27 +862,27 @@ vertical-align: middle;
 }
 
 :-webkit-full-screen .babl {
-    width: 400px;
-    height: 150px;
+    width: 290px;
+    height: 110px;
     left: 72%;
     top: 25%;
 }
 
 :-webkit-full-screen .babl_l,
 :-webkit-full-screen .babl_r {
-    width: 450px;
-    height: 200px;
+    width: 270px;
+    height: 110px;
 }
 
 :-webkit-full-screen .babl p,
 {
-    font-size: 2.1em;
+    font-size: 1em;
     padding: 5px;
-    margin-left: 45px;
+    margin-left: 25px;
 }
 
 :-webkit-full-screen .za_score {
-    font-size: 99px;
+    font-size: 71px;
 }
 
 :-webkit-full-screen .tops p {
@@ -887,13 +892,13 @@ vertical-align: middle;
 }
 
 :-webkit-full-screen .splashs_l .content_sp {
-    width: 75%;
+    width:90%;
     top: 3%;
 }
 
 :-webkit-full-screen .splashs_l .content_sp .option {
     position: relative;
-    top: 40px;
+    top: 20px;
     border: 1px solid #E6E6E6;
     height: 70px;
     line-height: 70px;
@@ -904,24 +909,24 @@ vertical-align: middle;
 }
 
 :-webkit-full-screen .splashs_l .content_sp .option span {
-    font-size: 18px;
+    font-size: 16px;
 }
 
 :-webkit-full-screen .splashs_l .content_sp .subject span {
-    font-size: 22px;
+    font-size: 16px;
 }
 
 
 /*Правое*/
 
 :-webkit-full-screen .splashs_r .content_sp {
-    width: 75%;
+    width: 90%;
     top: 3%;
 }
 
 :-webkit-full-screen .splashs_r .content_sp .option {
     position: relative;
-    top: 40px;
+    top: 20px;
     border: 1px solid #E6E6E6;
     height: 70px;
     line-height: 70px;
@@ -932,11 +937,11 @@ vertical-align: middle;
 }
 
 :-webkit-full-screen .splashs_r .content_sp .option span {
-    font-size: 18px;
+    font-size: 17px;
 }
 
 :-webkit-full-screen .splashs_r .content_sp .subject span {
-    font-size: 22px;
+    font-size: 18px;
 }
 
 :-webkit-full-screen .brony {
@@ -950,7 +955,7 @@ vertical-align: middle;
 
 :-webkit-full-screen .scchet p {
     font-size: 4em;
-    line-height: 4em;
+    line-height: 1em;
     font-family: Roboto;
     color: #50A959;
     font-weight: 600;
@@ -962,8 +967,8 @@ vertical-align: middle;
     text-align: center;
     line-height: 22px;
     top: 25px;
-    font-size: 2.2em;
-    line-height: 2em;
+    font-size: 1.7em;
+  line-height: 1.5em;
     margin-right: 5px;
 }
 
@@ -971,11 +976,12 @@ vertical-align: middle;
     position: absolute;
     width: 100%;
     text-align: center;
-    line-height: 22px;
-    top: 25px;
-    font-size: 2.2em;
-    line-height: 2em;
-    margin: 5px;
+    line-height:1px;
+    top: 0px;
+    font-size: 1.4em;
+line-height: 1.5em;
+    margin-top: 25px;
+    margin-left: 10px;
 }
 
 
