@@ -11,6 +11,7 @@ var fiveMinutes;
 var vs;
 var st = 0;
 var score = 0;
+var scoreB = 0;
 var trs;
 var anims;
 $(function() {
@@ -32,7 +33,7 @@ $(function() {
         TweenMax.set('.lains_in', {
             width: 0
         });
-        page = "training";
+        page = 1;
         stContent(0);
 
     });
@@ -45,7 +46,7 @@ $(function() {
         $('.babl_l').html('<p>' + pr + '</p>');
         TweenMax.to('.babl_l', 1, { autoAlpha: 1, delay: 1 });
         TweenMax.to('.babl_l', 1, { autoAlpha: 0, delay: 3, onComplete: tImest(60) });
-        page = "testing";
+        page = 0;
         stContent(1);
     });
 
@@ -88,33 +89,38 @@ function tImest(vr) {
 
 var anims = function anRandom() {
     clearInterval(vremy);
-    if (score === 1) {
+    if (scoreB === 0) {
         $('.splashs_r #v2').css('background', '#DA2422');
         $('.splashs_r #v2 span').css('color', '#FFF').css({ "font-weight": "bold" });
 
     }
-    if (score === 2) {
-        $('.splashs_r #v1').css('background', '##73a95f');
+    if (scoreB === 1) {
+
         $('.splashs_r #v1 span').css('color', '#FFF').css({ "font-weight": "bold" });
+        $('.splashs_r #v1').css('background', '#73a95f');
+        $(".balls_r").html(10);
     }
-    if (score === 3) {
+    if (scoreB === 2) {
         $('.splashs_r #v3').css('background', '#DA2422');
         $('.splashs_r #v3 span').css('color', '#FFF').css({ "font-weight": "bold" });
     }
-    if (score === 4) {
-        $('.splashs_r #v3').css('background', '##73a95f');
+    if (scoreB === 3) {
+        $('.splashs_r #v3').css('background', '#73a95f');
         $('.splashs_r #v3 span').css('color', '#FFF').css({ "font-weight": "bold" });
+        $(".balls_r").html(30);
     }
-    if (score === 5) {
+    if (scoreB === 4) {
         $('.splashs_r #v1').css('background', '#DA2422');
         $('.splashs_r #v1 span').css('color', '#FFF').css({ "font-weight": "bold" });
     }
-    if (score === 6) {
-        $('.splashs_r #v4').css('background', '##73a95f');
+    if (scoreB === 5) {
+        $('.splashs_r #v4').css('background', '#73a95f');
         $('.splashs_r #v4 span').css('color', '#FFF').css({ "font-weight": "bold" });
+        $(".balls_r").html(60);
     }
     setTimeout(function() {
         trs();
+        scoreB++;
     }, 3000)
 }
 
@@ -266,7 +272,7 @@ function stContent(vg) {
                         TweenMax.to('.ul_g', 0.2, { autoAlpha: 0 });
                         pos = 1;
                     }
-                    console.log(count);
+
                     if (count == 0 || count == 1) {
                         nuMstaK(10);
                     } else
@@ -279,6 +285,7 @@ function stContent(vg) {
                     }
 
                     score++;
+
                 } else {
                     $(this).css('background', '#DA2422');
                     $('.cat_tr ').css("backgroundImage", "url(img/cat_s.gif )").css("backgroundSize", "contain").css("backgroundRepeat", "noRepeat");
@@ -287,8 +294,11 @@ function stContent(vg) {
                     $('.babl_r').html('<p>' + luser + '</p>');
                     TweenMax.to('.babl_r', 0.5, { autoAlpha: 1, delay: 1 });
                     TweenMax.to('.babl_r', 0.5, { autoAlpha: 0, delay: 3 });
-                    nuMstaK(-10);
 
+                    if (page === 0) {
+                        nuMstaK(-10);
+                    }
+                    console.log(page);
                     if (count == 2 || count == 3) {
                         $('.tops').html("<p>Вопросы 2 уровня. 20 баллов</p>");
                     } else if (count == 4 || count == 5) {
@@ -313,6 +323,7 @@ function stContent(vg) {
                     }
                 }
                 disabledClick = true;
+                scoreB++;
                 setTimeout(function() {
                     TweenMax.to('.babl', 1, {
                         autoAlpha: 0
@@ -334,19 +345,19 @@ function stContent(vg) {
                         if (vop < 6) {
                             vop++;
                             if (vop === 1 || vop === 2) {
-                                tImest(61);
+                                tImest(6);
                             }
                             if (vop === 3 || vop === 4) {
-                                tImest(41);
+                                tImest(6);
                             }
                             if (vop === 5 || vop === 6) {
-                                tImest(21);
+                                tImest(6);
                             }
                         }
                         $('.vop' + vop).delay(200).fadeIn(600);
                     } else {
 
-                        if (page = "testing") {
+                        if (page === 0) {
                             $('.timers').html(100);
                             $('.scchet p').html(score + ':3');
                             TweenMax.to('.scchet', 1, { autoAlpha: 1 });
@@ -425,13 +436,18 @@ function stContent(vg) {
                 if (vop < 6) {
                     vop++;
                     if (vop === 1 || vop === 2) {
-                        tImest(61);
+                        tImest(6);
                     }
                     if (vop === 3 || vop === 4) {
-                        tImest(41);
+                        tImest(6);
                     }
                     if (vop === 5 || vop === 6) {
-                        tImest(21);
+                        tImest(6);
+                    }
+                    if (count == 2 || count == 3) {
+                        $('.tops').html("<p>Вопросы 2 уровня. 20 баллов</p>");
+                    } else if (count == 4 || count == 5) {
+                        $('.tops').html("<p>Вопросы 3 уровня. 30 баллов</p>");
                     }
                 }
                 $('.vop' + vop).delay(200).fadeIn(600);
